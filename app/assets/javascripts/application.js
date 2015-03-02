@@ -3,77 +3,89 @@
 //= require bootstrap-sprockets
 //= require_tree .
 
-var w = $('#white')[0];
-var r = $('#red')[0];
-var g = $('#green')[0];
-var b = $('#blue')[0];
-var y = $('#yellow')[0];
+if($('#screen')){
+	var w = $('#white')[0];
+	var r = $('#red')[0];
+	var g = $('#green')[0];
+	var b = $('#blue')[0];
+	var y = $('#yellow')[0];
+}
 
 $(document).ready(function(){
 
-	$('#screen').height(($('#screen').width() / 16) * 9);
-
-	audio = $('#audio')[0];
-	audio.addEventListener('canplaythrough', function(){
-		$('#record').removeClass('disabled');
-	}, false);
-	audio.addEventListener('timeupdate', function(){
-		$('.progress-bar').css('width', (audio.currentTime / audio.duration) * 100 + '%');
-	}, false);
-	audio.addEventListener('ended', function(){
-		play();
-		console.log(JSON.stringify(notes));
-	}, false);
-
-	$('#record').click(function(){
-		$(this).addClass('btn-default');
-		$(this).removeClass('btn-danger');
-		$(this).text('Stop');
-		play();
-	});
-
-	audioContext = new AudioContext();
-
-	timerWorker = new Worker('/assets/metronomeworker.js');
-	timerWorker.onmessage = function(e){
-		if(e.data == 'tick')
-			scheduler();
-	};
-	timerWorker.postMessage({
-		'interval': lookahead
-	});
+	if($('#screen')){
+	
+		$('#screen').height(($('#screen').width() / 16) * 9);
+	
+		audio = $('#audio')[0];
+		audio.addEventListener('canplaythrough', function(){
+			$('#record').removeClass('disabled');
+		}, false);
+		audio.addEventListener('timeupdate', function(){
+			$('.progress-bar').css('width', (audio.currentTime / audio.duration) * 100 + '%');
+		}, false);
+		audio.addEventListener('ended', function(){
+			play();
+			$('#submit').removeClass('disabled');
+			console.log(JSON.stringify(notes));
+		}, false);
+	
+		$('#record').click(function(){
+			$('#record').addClass('btn-default');
+			$('#record').removeClass('btn-danger');
+			$('#record').text('Stop');
+			$('#submit').addClass('disabled');
+			play();
+		});
+	
+		audioContext = new AudioContext();
+	
+		timerWorker = new Worker('/assets/metronomeworker.js');
+		timerWorker.onmessage = function(e){
+			if(e.data == 'tick')
+				scheduler();
+		};
+		timerWorker.postMessage({
+			'interval': lookahead
+		});
+	
+	}
 
 });
 
 $(document).keydown(function(e){
+	if(isPlaying){
+		e.preventDefault();
+		notes.push({
+			note: note,
+			key: e.which
+		});
+		trigger(e.which);
+		//console.log('note: ' + note + ', key: ' + e.which);
+	}
+});
 
-	e.preventDefault();
-
-	notes.push({
-		note: note,
-		key: e.which
-	});
-	console.log('note: ' + note + ', key: ' + e.which);
-
-	switch(e.which){
+function trigger(key){
+	console.log(key);
+	switch(key){
 		case 87://white
-			$('#preview').children('video').hide();
+			$('#screen').children('video').hide();
 			$('#white').show();
 			break;
 		case 82://red
-			$('#preview').children('video').hide();
+			$('#screen').children('video').hide();
 			$('#red').show();
 			break;
 		case 71://green
-			$('#preview').children('video').hide();
+			$('#screen').children('video').hide();
 			$('#green').show();
 			break;
 		case 66://blue
-			$('#preview').children('video').hide();
+			$('#screen').children('video').hide();
 			$('#blue').show();
 			break;
 		case 89://yellow
-			$('#preview').children('video').hide();
+			$('#screen').children('video').hide();
 			$('#yellow').show();
 			break;
 		case 32://blind
@@ -88,9 +100,4 @@ $(document).keydown(function(e){
 			break;
 		default:
 	}
-
-});
-
-function trigger(key){
-	console.log(key);
 }

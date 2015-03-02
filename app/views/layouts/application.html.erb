@@ -18,6 +18,37 @@
 			<h1>Light Up The Night!</h1>
 		</div>
 		<%= yield %>
+		<div class="container" style="margin: 60px auto;">
+			<div class="row">
+				<div class="col-sm-4 col-xs-6">
+					<p>DPS Inc.</p>
+					<p>is proud to be a Platinum Level Sponsor of</p>
+					<p>2015 Winter Music Conference</p>
+					<p>Meet the DPS Crew in the</p>
+					<p>RICHELIEU ROOM</p>
+				</div>
+				<div class="col-sm-8 col-xs-6">
+					<div class="row">
+						<div class="col-sm-6">
+							<img src="<%= asset_path('theglitchmob.jpg') %>" class="img-responsive">
+						</div>
+						<div class="col-sm-6">
+							<p>Featuring the track "Skullclub" by</p>
+							<h3>The Glitch Mob</h3>
+							<p>Visit <a href="http://theglitchmob.com/ldiremixes/" target="_blank">theglitchmob.com</a> for tour dates, downloads and more.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-6 text-left">
+					<p>&copy; 2015 DPS Inc.</p>
+				</div>
+				<div class="col-sm-6 text-right">
+					<p>Privacy Policy | Terms & Conditions</p>
+				</div>
+			</div>
+		</div>
 		<%= javascript_include_tag 'application' %>		
 	</body>
 </html>

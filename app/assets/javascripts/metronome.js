@@ -75,7 +75,7 @@ function play(){
 		g.play();
 		b.play();
 		y.play();
-		return 'stop';
+		return 'Stop';
 	}else{
 		timerWorker.postMessage('stop');
 		audio.pause();
