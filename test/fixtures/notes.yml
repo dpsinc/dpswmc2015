@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  design_id: 1
+  note: 1
+  key: 1
+
+two:
+  design_id: 1
+  note: 1
+  key: 1
