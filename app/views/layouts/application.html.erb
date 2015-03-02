@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Light It Up!</title>
+		<title>Light Up The Night!</title>
 		<%= stylesheet_link_tag 'application', media: 'all' %>
 		<%= favicon_link_tag 'favicon.png', type: 'image/png' %>
 		<%= csrf_meta_tags %>
@@ -14,6 +14,9 @@
 		<![endif]-->
 	</head>
 	<body>
+		<div class="container">
+			<h1>Light Up The Night!</h1>
+		</div>
 		<%= yield %>
 		<%= javascript_include_tag 'application' %>		
 	</body>
