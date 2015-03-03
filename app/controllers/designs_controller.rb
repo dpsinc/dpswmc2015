@@ -12,7 +12,12 @@ class DesignsController < ApplicationController
 
   # GET /designs/new
   def new
-    @design = Design.new
+	if !session[:user_id]
+		redirect_to '/'
+	else
+		@user = User.find(session[:user_id])
+		@design = Design.new
+	end
   end
 
   # GET /designs/1/edit

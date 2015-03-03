@@ -21,10 +21,12 @@ class UsersController < ApplicationController
 
   # POST /users
   def create
-    @user = User.new(user_params)
-
+    #@user = User.new(user_params)
+	@user = User.find_or_create_by(:email => params[:email])
+	@user.name = params[:name]
     if @user.save
       #redirect_to @user, notice: 'User was successfully created.'
+	  session[:user_id] = @user.id
       redirect_to new_design_path, notice: 'User was successfully created.'
     else
       render :new
