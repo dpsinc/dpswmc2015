@@ -1,4 +1,5 @@
 class EntriesController < ApplicationController
+  before_action :set_user, only: [:new, :create]
   before_action :set_entry, only: [:show, :edit, :update, :destroy]
 
   # GET /entries
@@ -12,12 +13,7 @@ class EntriesController < ApplicationController
 
   # GET /entries/new
   def new
-	if !session[:user_id]
-		redirect_to new_user_path
-	else
-		@user = User.find(session[:user_id])
-		@entry = Entry.new
-	end
+	@entry = Entry.new
   end
 
   # GET /entries/1/edit
@@ -26,8 +22,8 @@ class EntriesController < ApplicationController
 
   # POST /entries
   def create
+	@user = User.find(session[:user_id])
     @entry = Entry.new(entry_params)
-
     if @entry.save
       redirect_to @entry, notice: 'Entry was successfully created.'
     else
@@ -52,12 +48,19 @@ class EntriesController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
+    def set_user
+		if !session[:user_id]
+			redirect_to new_user_path
+		else
+			@user = User.find(session[:user_id])
+	    end
+	end
     def set_entry
       @entry = Entry.find(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.
     def entry_params
-      params.require(:entry).permit(:user_id)
+      params.require(:entry).permit(:notes => [])
     end
 end
