@@ -34,8 +34,21 @@ $(document).ready(function(){
 			$('#record').addClass('btn-default');
 			$('#record').removeClass('btn-danger');
 			$('#record').text('Stop');
-			$('#submit').addClass('disabled');
+			//$('#submit').addClass('disabled');
 			play();
+		});
+		$('#submit').click(function(){
+			$.ajax({
+				type: 'post',
+				url: '/entries',
+				dataType: 'json',
+				contentType: 'application/json',
+				data: JSON.stringify({ 'notes': notes}),
+				success: function(data){
+					console.log(data);
+					window.location = '/entries/' + data.id;
+				}
+			});
 		});
 	
 		audioContext = new AudioContext();

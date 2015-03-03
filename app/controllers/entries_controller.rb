@@ -23,12 +23,24 @@ class EntriesController < ApplicationController
   # POST /entries
   def create
 	@user = User.find(session[:user_id])
-    @entry = Entry.new(entry_params)
-    if @entry.save
-      redirect_to @entry, notice: 'Entry was successfully created.'
-    else
-      render :new
-    end
+    @entry = Entry.new(:user_id => @user.id)
+	@notes = params[:notes]
+	@notes.each do |n|
+		@note = Note.new
+		@note.note = n[:note]
+		@note.key = n[:key]
+		@entry.notes << @note
+	end
+    #@entry.notes.build(params[:notes])
+    respond_to do |format|
+	    if @entry.save
+	      format.html { redirect_to @entry, notice: 'Entry was successfully created.' }
+	      format.json { render json: @entry, status: :created, location: @entry }
+	    else
+	      format.html { render :new }
+	       format.json { render json: @entry.errors, status: :unprocessable_entity }
+	    end
+	  end
   end
 
   # PATCH/PUT /entries/1
