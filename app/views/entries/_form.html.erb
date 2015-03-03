@@ -1,10 +1,10 @@
-<%= form_for(@design) do |f| %>
-  <% if @design.errors.any? %>
+<%= form_for(@entry) do |f| %>
+  <% if @entry.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@design.errors.count, "error") %> prohibited this design from being saved:</h2>
+      <h2><%= pluralize(@entry.errors.count, "error") %> prohibited this design from being saved:</h2>
 
       <ul>
-      <% @design.errors.full_messages.each do |message| %>
+      <% @entry.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>

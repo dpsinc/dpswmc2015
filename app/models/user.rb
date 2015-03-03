@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
 
-	has_many :designs
+	has_many :entries
 
 	validates_presence_of :email
 	validates_uniqueness_of :email
