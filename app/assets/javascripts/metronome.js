@@ -90,7 +90,7 @@ function play(){
 		b.currentTime = 0;
 		y.pause();
 		y.currentTime = 0;
-		$('#preview').children('video').hide();
+		$('#screen').children('video').hide();
 		$('#record').addClass('btn-danger');
 		$('#record').removeClass('btn-default');
 		$('#record').text('Record');

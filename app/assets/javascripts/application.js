@@ -40,7 +40,8 @@ $(document).ready(function(){
 	
 		audioContext = new AudioContext();
 	
-		timerWorker = new Worker('/assets/metronomeworker.js');
+		//timerWorker = new Worker('/assets/metronomeworker.js');
+		timerWorker = new Worker('/metronomeworker.js');
 		timerWorker.onmessage = function(e){
 			if(e.data == 'tick')
 				scheduler();

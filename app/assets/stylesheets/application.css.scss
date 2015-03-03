@@ -53,6 +53,7 @@ p{
 	width: 720px;
 }
 .btn{
+	border-radius: 2px;
 	font-weight: 900;
 	text-transform: uppercase;
 }
@@ -77,5 +78,9 @@ p{
 	}
 
 #control{
+	background: #000;
+	background: rgba(0,0,0,0.5);
+	border-radius: 2px;
 	margin-bottom: 30px;
+	padding: 15px;
 }
