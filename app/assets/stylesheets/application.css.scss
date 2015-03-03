@@ -54,7 +54,7 @@ p{
 	border-radius: 2px;
 	margin-bottom: 30px;
 	max-width: 100%;
-	padding: 15px;
+	padding: 30px;
 	width: 720px;
 }
 .btn{
@@ -71,10 +71,7 @@ p{
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: cover;
-	border: solid 5px #fff;
-	border-radius: 2px;
 	height: auto;
-	margin-bottom: 30px;
 	position: relative;
 	width: 100%;
 }
@@ -88,4 +85,8 @@ p{
 	}
 
 #control{
+	bottom: 0;
+	padding: 30px;
+	position: absolute;
+	width: 100%;
 }
