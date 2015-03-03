@@ -57,6 +57,9 @@ p{
 	font-weight: 900;
 	text-transform: uppercase;
 }
+.progress{
+	border-radius: 2px;
+}
 
 #screen{
 	background-image: image-url('player.jpg');
@@ -73,7 +76,9 @@ p{
 	#screen img, #screen video{
 		display: none;
 		height: auto;
+		left: 0;
 		position: absolute;
+		top: 0;
 		width: 100%;
 	}
 
