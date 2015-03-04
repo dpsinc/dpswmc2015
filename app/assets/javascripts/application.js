@@ -50,10 +50,12 @@ $(document).ready(function(){
 				}
 			});
 		});
+		$('#play').click(function(){
+			play();
+		});
 	
 		audioContext = new AudioContext();
 	
-		//timerWorker = new Worker('/assets/metronomeworker.js');
 		timerWorker = new Worker('/metronomeworker.js');
 		timerWorker.onmessage = function(e){
 			if(e.data == 'tick')
@@ -65,9 +67,18 @@ $(document).ready(function(){
 	
 	}
 
+	$('.share').click(function(){
+		var w = 500;
+		var h = 500;
+		var t = (screen.height / 2) - (h / 2);
+		var l = (screen.width / 2) - (w / 2);
+		var url = $(this).data('url');
+		window.open(url, 'share', 'width='+w+', height='+h+', top='+t+', left='+l+', chrome=no, location=no, menubar=no, personalbar=no, resizable=no, scrollbars=no, status=no, toolbar=no');
+	});
+
 });
 
-if($('#control').length){
+if($('#record').length){
 	$(document).keydown(function(e){
 		if(isPlaying){
 			e.preventDefault();

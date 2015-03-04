@@ -43,6 +43,9 @@ h2{
 p{
 	margin: 15px 0;
 }
+ul, ol{
+	margin-bottom: 0;
+}
 
 .container-fluid{
 	max-width: 100%;
@@ -93,4 +96,17 @@ p{
 	padding: 30px;
 	position: absolute;
 	width: 100%;
+}
+
+.facebook, .facebook:hover{
+	color: #3b5998;
+}
+.twitter, .twitter:hover{
+	color: #55acee;
+}
+.google, .google:hover{
+	color: #dd4b39;
+}
+.linkedin, .linkedin:hover{
+	color: #0976b4;
 }
