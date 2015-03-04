@@ -68,8 +68,8 @@ $(document).ready(function(){
 	}
 
 	$('.share').click(function(){
-		var w = 500;
-		var h = 500;
+		var w = 560;
+		var h = 560;
 		var t = (screen.height / 2) - (h / 2);
 		var l = (screen.width / 2) - (w / 2);
 		var url = $(this).data('url');
