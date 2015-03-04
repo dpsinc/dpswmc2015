@@ -67,17 +67,19 @@ $(document).ready(function(){
 
 });
 
-$(document).keydown(function(e){
-	if(isPlaying){
-		e.preventDefault();
-		notes.push({
-			note: note,
-			key: e.which
-		});
-		trigger(e.which);
-		//console.log('note: ' + note + ', key: ' + e.which);
-	}
-});
+if($('#control').length){
+	$(document).keydown(function(e){
+		if(isPlaying){
+			e.preventDefault();
+			notes.push({
+				note: note,
+				key: e.which
+			});
+			trigger(e.which);
+			//console.log('note: ' + note + ', key: ' + e.which);
+		}
+	});
+}
 
 function trigger(key){
 	console.log(key);

@@ -31,7 +31,6 @@ class EntriesController < ApplicationController
 		@note.key = n[:key]
 		@entry.notes << @note
 	end
-    #@entry.notes.build(params[:notes])
     respond_to do |format|
 	    if @entry.save
 	      format.html { redirect_to @entry, notice: 'Entry was successfully created.' }

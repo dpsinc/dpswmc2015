@@ -1,9 +1,70 @@
-<p id="notice"><%= notice %></p>
+<div class="container-fluid">
 
-<p>
-  <strong>User:</strong>
-  <%= @entry.user_id %>
-</p>
+	<div id="screen">
 
-<%= link_to 'Edit', edit_entry_path(@entry) %> |
-<%= link_to 'Back', entries_path %>
+		<img id="blind" src="<%= image_path('blind.png') %>">
+
+		<img id="strobe" src="<%= image_path('strobe.png') %>">
+
+		<video id="white" preload loop muted>
+			<source src="<%= video_path('white.mp4') %>" type="video/mp4">
+			<source src="<%= video_path('white.webm') %>" type="video/webm">
+			<source src="<%= video_path('white.ogv') %>" type="video/ogg">
+		</video>
+
+		<video id="red" preload loop muted>
+			<source src="<%= video_path('red.mp4') %>" type="video/mp4">
+			<source src="<%= video_path('red.webm') %>" type="video/webm">
+			<source src="<%= video_path('red.ogv') %>" type="video/ogg">
+		</video>
+
+		<video id="green" preload loop muted>
+			<source src="<%= video_path('green.mp4') %>" type="video/mp4">
+			<source src="<%= video_path('green.webm') %>" type="video/webm">
+			<source src="<%= video_path('green.ogv') %>" type="video/ogg">
+		</video>
+
+		<video id="blue" preload loop muted>
+			<source src="<%= video_path('blue.mp4') %>" type="video/mp4">
+			<source src="<%= video_path('blue.webm') %>" type="video/webm">
+			<source src="<%= video_path('blue.ogv') %>" type="video/ogg">
+		</video>
+
+		<video id="yellow" preload loop muted>
+			<source src="<%= video_path('yellow.mp4') %>" type="video/mp4">
+			<source src="<%= video_path('yellow.webm') %>" type="video/webm">
+			<source src="<%= video_path('yellow.ogv') %>" type="video/ogg">
+		</video>
+
+		<audio id="audio" preload>
+			<source src="<%= audio_path('audio.mp3') %>" type="audio/mpeg">
+		</audio>
+
+	</div>
+
+</div>
+
+<div class="container">
+	<p>Light show created <%= @entry.created_at %> by <%= @entry.user.name %></p>
+	<ul class="list-inline">
+		<li>Share</li>
+		<li><a href="https://www.facebook.com/sharer/sharer.php?u=<%=u request.original_url %>" target="_blank">Facebook</a></li>
+		<li><a href="https://twitter.com/home?status=<%=u request.original_url %>" target="_blank">Twitter</a></li>
+		<li><a href="https://plus.google.com/share?url=<%=u request.original_url %>" target="_blank">Google+</a></li>
+		<li><a href="https://www.linkedin.com/shareArticle?mini=true&url=<%=u request.original_url %>&title=<%=u 'Light Up The Night!' %>&summary=Check%20out%20my%20cool%20video!&source=dpswmc2014.com" target"_blank">LinkedIn</a></li>
+	</ul>
+</div>
+
+<script>
+	audio = document.getElementById('audio');
+	audio.addEventListener('canplaythrough', function(){
+		notes = [];
+		<% @entry.notes.each do |note| %>
+			notes.push({
+				note: <%= note.note %>,
+				key: <%= note.key %>
+			});
+		<% end %>
+		play();
+	}, false);
+</script>
