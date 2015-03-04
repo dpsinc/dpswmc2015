@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  http_basic_authenticate_with :name => 'dpsinc', :password => 'T0ny!remix', only: [:index]
+
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   # GET /users

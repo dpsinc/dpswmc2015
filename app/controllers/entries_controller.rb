@@ -1,4 +1,6 @@
 class EntriesController < ApplicationController
+  http_basic_authenticate_with :name => 'dpsinc', :password => 'T0ny!remix', only: [:index]
+
   before_action :set_user, only: [:new, :create]
   before_action :set_entry, only: [:show, :edit, :update, :destroy]
 

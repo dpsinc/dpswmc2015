@@ -62,6 +62,10 @@ p{
 	font-weight: 900;
 	text-transform: uppercase;
 }
+.table > thead > tr > th, .table > thead > tr > td, .table > tbody > tr > th, .table > tbody > tr > td, .table > tfoot > tr > th, .table > tfoot > tr > td{
+	border-top: 1px solid #000;
+	text-align: left;
+}
 .progress{
 	border-radius: 2px;
 }
