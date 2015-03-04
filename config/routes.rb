@@ -1,8 +1,8 @@
 Dpswmc2015::Application.routes.draw do
 
 	root 'users#new'
-	resources :users
-	resources :entries
-	resources :notes
+	resources :users, only: [:new, :create, :index]
+	resources :entries, only: [:new, :create, :index, :show]
+	resources :notes, only: [:create]
 
 end
