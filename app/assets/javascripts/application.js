@@ -1,7 +1,14 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap-sprockets
-//= require_tree .
+//= require AudioContextMonkeyPatch
+//= require metronome
+//= require soundmanager2
+//= require PxLoader
+//= require PxLoaderImage
+//= require PxLoaderSound
+//= require PxLoaderVideo
+//= require_self
 
 if($('#screen')){
 	var w = $('#white')[0];
@@ -16,7 +23,7 @@ $(document).ready(function(){
 	if($('#screen')){
 	
 		$('#screen').height(($('#screen').width() / 16) * 9);
-	
+
 		audio = $('#audio')[0];
 		audio.addEventListener('canplaythrough', function(){
 			$('#record').removeClass('disabled');

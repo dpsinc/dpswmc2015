@@ -6,27 +6,27 @@
 
 		<img id="strobe" src="<%= image_path('strobe.png') %>">
 
-		<video id="white" preload loop muted>
+		<video id="white" loop muted>
 			<source src="<%= video_path('white.mp4') %>" type="video/mp4">
 		</video>
 
-		<video id="red" preload loop muted>
+		<video id="red" loop muted>
 			<source src="<%= video_path('red.mp4') %>" type="video/mp4">
 		</video>
 
-		<video id="green" preload loop muted>
+		<video id="green" loop muted>
 			<source src="<%= video_path('green.mp4') %>" type="video/mp4">
 		</video>
 
-		<video id="blue" preload loop muted>
+		<video id="blue" loop muted>
 			<source src="<%= video_path('blue.mp4') %>" type="video/mp4">
 		</video>
 
-		<video id="yellow" preload loop muted>
+		<video id="yellow" loop muted>
 			<source src="<%= video_path('yellow.mp4') %>" type="video/mp4">
 		</video>
 
-		<audio id="audio" preload>
+		<audio id="audio">
 			<source src="<%= audio_path('audio.mp3') %>" type="audio/mpeg">
 		</audio>
 
@@ -81,18 +81,37 @@
 
 </div>
 
+<div class="container">
+	<h2>Think You Can Do Better?</h2>
+	<p>Enter for your chance to win a Grand Prize DJ Set valued at $4,500!</p>
+	<%= link_to 'PLAY!', new_user_path, :class => 'btn btn-lg btn-primary' %>
+</div>
+
 <script>
-	audio = document.getElementById('audio');
-	audio.addEventListener('canplaythrough', function(){
-		notes = [];
-		<% @entry.notes.each do |note| %>
-			notes.push({
-				note: <%= note.note %>,
-				key: <%= note.key %>
-			});
-		<% end %>
-		//play();
-console.log('ready');
-		document.getElementById('play').className = 'btn btn-block btn-success';
-	}, false);
+
+	$(document).ready(function(){
+		soundManager.onready(function(){
+			var loader = new PxLoader();
+			loader.add(new PxLoaderImage('<%= image_path('blind.png') %>'));
+			loader.add(new PxLoaderImage('<%= image_path('strobe.png') %>'));
+			loader.addSound('audio', '<%= audio_path('audio.mp3') %>');
+			loader.add(new PxLoaderVideo('<%= video_path('white.mp4') %>'));
+			loader.add(new PxLoaderVideo('<%= video_path('red.mp4') %>'));
+			loader.add(new PxLoaderVideo('<%= video_path('green.mp4') %>'));
+			loader.add(new PxLoaderVideo('<%= video_path('blue.mp4') %>'));
+			loader.add(new PxLoaderVideo('<%= video_path('yellow.mp4') %>'));
+			loader.start();
+			loader.addCompletionListener(function(e){
+				notes = [];
+				<% @entry.notes.each do |note| %>
+					notes.push({
+						note: <%= note.note %>,
+						key: <%= note.key %>
+					});
+				<% end %>
+				$('#play').removeClass('disabled');
+			}); 
+		});
+	});
+
 </script>
