@@ -8,6 +8,7 @@
 //= require PxLoaderImage
 //= require PxLoaderSound
 //= require PxLoaderVideo
+//= require synchronize-min
 //= require_self
 
 if($('#screen')){
@@ -18,11 +19,17 @@ if($('#screen')){
 	var y = $('#yellow')[0];
 }
 
+$(document).on('sjs:allPlayersReady', function(event){
+	console.log('sync');
+});
+
 $(document).ready(function(){
 
 	if($('#screen')){
 	
 		$('#screen').height(($('#screen').width() / 16) * 9);
+
+		$.synchronizeVideos(0, 'white', 'red', 'green', 'blue', 'yellow');
 
 		audio = $('#audio')[0];
 		audio.addEventListener('canplaythrough', function(){

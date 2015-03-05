@@ -70,6 +70,7 @@ function play(){
 		nextNoteTime = audioContext.currentTime;
 		timerWorker.postMessage('start');
 		audio.play();
+/*
 		w = document.getElementById('white');
 		r = document.getElementById('red');
 		g = document.getElementById('green');
@@ -80,21 +81,15 @@ function play(){
 		g.play();
 		b.play();
 		y.play();
+*/
+		$(document).trigger('sjs:play', []);
 		return 'Stop';
 	}else{
 		timerWorker.postMessage('stop');
 		audio.pause();
 		audio.currentTime = 0;
-		w.pause();
-		w.currentTime = 0;
-		r.pause();
-		r.currentTime = 0;
-		g.pause();
-		g.currentTime = 0;
-		b.pause();
-		b.currentTime = 0;
-		y.pause();
-		y.currentTime = 0;
+		$(document).trigger('sjs:play', []);
+		$(document).trigger('sjs:setCurrentTime', [], 0);
 		$('#screen').children('video').hide();
 		$('#record').addClass('btn-danger');
 		$('#record').removeClass('btn-default');
