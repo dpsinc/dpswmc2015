@@ -1,6 +1,7 @@
 class EntriesController < ApplicationController
   http_basic_authenticate_with :name => 'dpsinc', :password => 'T0ny!remix', only: [:index]
 
+  before_action :get_user, only: [:show]
   before_action :set_user, only: [:new, :create]
   before_action :set_entry, only: [:show, :edit, :update, :destroy]
 
@@ -61,6 +62,13 @@ class EntriesController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
+    def get_user
+		if !session[:user_id]
+			@user = nil
+		else
+			@user = User.find(session[:user_id])
+	    end
+	end
     def set_user
 		if !session[:user_id]
 			redirect_to new_user_path

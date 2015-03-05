@@ -60,6 +60,9 @@ ul, ol{
 	padding: 30px;
 	width: 720px;
 }
+.form-control{
+	border-radius: 2px;
+}
 .btn{
 	border-radius: 2px;
 	font-weight: 900;
@@ -85,6 +88,7 @@ ul, ol{
 	background-repeat: no-repeat;
 	background-size: cover;
 	height: auto;
+	margin-bottom: 60px;
 	position: relative;
 	width: 100%;
 }

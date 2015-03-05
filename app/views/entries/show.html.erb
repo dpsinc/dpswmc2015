@@ -81,11 +81,52 @@
 
 </div>
 
-<div class="container">
-	<h2>Think You Can Do Better?</h2>
-	<p>Enter for your chance to win a Grand Prize DJ Set valued at $4,500!</p>
-	<%= link_to 'PLAY!', new_user_path, :class => 'btn btn-lg btn-primary' %>
-</div>
+<% if @entry.user_id == @user.id %>
+	<div class="container">
+		<h2>Thanks For Playing!</h2>
+		<p>Don't forget to share your design!</p>
+		<ul class="list-inline">
+			<li>
+				<a data-url="https://www.facebook.com/sharer/sharer.php?u=<%=u request.original_url %>&output=embed" class="share facebook">
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-circle fa-stack-2x"></i>
+						<i class="fa fa-facebook fa-fw fa-stack-1x fa-inverse"></i>
+					</span>
+				</a>
+			</li>
+			<li>
+				<a data-url="https://twitter.com/home?status=<%=u request.original_url %>" class="share twitter">
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-circle fa-stack-2x"></i>
+						<i class="fa fa-twitter fa-fw fa-stack-1x fa-inverse"></i>
+					</span>
+				</a>
+			</li>
+			<li>
+				<a data-url="https://plus.google.com/share?url=<%=u request.original_url %>" class="share google">
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-circle fa-stack-2x"></i>
+						<i class="fa fa-google-plus fa-fw fa-stack-1x fa-inverse"></i>
+					</span>
+				</a>
+			</li>
+			<li>
+				<a data-url="https://www.linkedin.com/shareArticle?mini=true&url=<%=u request.original_url %>&title=<%=u 'Play The Light It Up Fantasy DJ Game!' %>&summary=<%=u 'Enter for your chance to win a Grand Prize DJ Set valued at $4,500!' %>&source=dpswmc2015.com" class="share linkedin">
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-circle fa-stack-2x"></i>
+						<i class="fa fa-linkedin fa-fw fa-stack-1x fa-inverse"></i>
+					</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+<% else %>
+	<div class="container">
+		<h2>Think You Can Do Better?</h2>
+		<p>Enter for your chance to win a Grand Prize DJ Set valued at $4,500!</p>
+		<%= link_to 'PLAY!', new_user_path, :class => 'btn btn-lg btn-primary' %>
+	</div>
+<% end %>
 
 <script>
 
