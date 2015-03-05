@@ -111,23 +111,23 @@ $(document).ready(function(){
 function trigger(key){
 	console.log(key);
 	switch(key){
-		case 87://white
+		case 119,87://white
 			$('#screen').children('video').hide();
 			$('#white').show();
 			break;
-		case 82://red
+		case 114,82://red
 			$('#screen').children('video').hide();
 			$('#red').show();
 			break;
-		case 71://green
+		case 103,71://green
 			$('#screen').children('video').hide();
 			$('#green').show();
 			break;
-		case 66://blue
+		case 98,66://blue
 			$('#screen').children('video').hide();
 			$('#blue').show();
 			break;
-		case 89://yellow
+		case 121,89://yellow
 			$('#screen').children('video').hide();
 			$('#yellow').show();
 			break;
