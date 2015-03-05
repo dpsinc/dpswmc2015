@@ -90,6 +90,7 @@
 <script>
 
 	$(document).ready(function(){
+/*
 		soundManager.onready(function(){
 			var loader = new PxLoader();
 			loader.add(new PxLoaderImage('<%= image_path('blind.png') %>'));
@@ -102,6 +103,7 @@
 			loader.add(new PxLoaderVideo('<%= video_path('yellow.mp4') %>'));
 			loader.start();
 			loader.addCompletionListener(function(e){
+*/
 				notes = [];
 				<% @entry.notes.each do |note| %>
 					notes.push({
@@ -109,9 +111,11 @@
 						key: <%= note.key %>
 					});
 				<% end %>
+/*
 				$('#play').removeClass('disabled');
 			}); 
 		});
+*/
 	});
 
 </script>

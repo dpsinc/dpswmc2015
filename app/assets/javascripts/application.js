@@ -20,6 +20,8 @@ if($('#screen')){
 }
 
 $(document).on('sjs:allPlayersReady', function(event){
+	$('#record').removeClass('disabled');
+	$('#play').removeClass('disabled');
 	console.log('sync');
 });
 
@@ -81,6 +83,20 @@ $(document).ready(function(){
 	
 	}
 
+	if($('#record').length){
+		$(document).keydown(function(e){
+			if(isPlaying){
+				e.preventDefault();
+				notes.push({
+					note: note,
+					key: e.which
+				});
+				trigger(e.which);
+				console.log('note: ' + note + ', key: ' + e.which);
+			}
+		});
+	}
+
 	$('.share').click(function(){
 		var w = 560;
 		var h = 560;
@@ -91,20 +107,6 @@ $(document).ready(function(){
 	});
 
 });
-
-if($('#record').length){
-	$(document).keydown(function(e){
-		if(isPlaying){
-			e.preventDefault();
-			notes.push({
-				note: note,
-				key: e.which
-			});
-			trigger(e.which);
-			//console.log('note: ' + note + ', key: ' + e.which);
-		}
-	});
-}
 
 function trigger(key){
 	console.log(key);

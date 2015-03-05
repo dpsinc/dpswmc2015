@@ -45,7 +45,7 @@ function nextNote(){
 			trigger(n.key);
 		}
 	});
-	//console.log(current16thNote);
+	console.log(current16thNote);
 }
 
 function scheduleNote(beatNumber, time){
@@ -70,18 +70,6 @@ function play(){
 		nextNoteTime = audioContext.currentTime;
 		timerWorker.postMessage('start');
 		audio.play();
-/*
-		w = document.getElementById('white');
-		r = document.getElementById('red');
-		g = document.getElementById('green');
-		b = document.getElementById('blue');
-		y = document.getElementById('yellow');
-		w.play();
-		r.play();
-		g.play();
-		b.play();
-		y.play();
-*/
 		$(document).trigger('sjs:play', []);
 		return 'Stop';
 	}else{
