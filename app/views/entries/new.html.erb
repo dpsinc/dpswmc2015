@@ -1,35 +1,25 @@
-<div class="container">
-
+<div class="container-fluid">
 	<div id="screen">
-
 		<img id="blind" src="<%= image_path('blind.png') %>">
-
 		<img id="strobe" src="<%= image_path('strobe.png') %>">
-
 		<video id="white" preload loop muted>
 			<source src="<%= video_path('white.mp4') %>" type="video/mp4">
 		</video>
-
 		<video id="red" preload loop muted>
 			<source src="<%= video_path('red.mp4') %>" type="video/mp4">
 		</video>
-
 		<video id="green" preload loop muted>
 			<source src="<%= video_path('green.mp4') %>" type="video/mp4">
 		</video>
-
 		<video id="blue" preload loop muted>
 			<source src="<%= video_path('blue.mp4') %>" type="video/mp4">
 		</video>
-
 		<video id="yellow" preload loop muted>
 			<source src="<%= video_path('yellow.mp4') %>" type="video/mp4">
 		</video>
-
 		<audio id="audio" preload>
 			<source src="<%= audio_path('audio.mp3') %>" type="audio/mpeg">
 		</audio>
-
 		<div id="control">
 			<div class="row">
 				<div class="col-sm-2 col-xs-3">
@@ -46,9 +36,9 @@
 				</div>
 			</div>
 		</div>
-
 	</div>
-	
+</div>
+<div class="container">
 	<h2>How To Play</h2>
 	<p>When you press record, the track will start playing. Press the following keys to change the lighting:</p>
 	<ul class="list-inline">
