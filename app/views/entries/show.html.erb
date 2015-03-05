@@ -81,7 +81,10 @@
 
 </div>
 
-<% if @entry.user_id == @user.id %>
+<%
+	unless @user.nil?
+		if @entry.user_id == @user.id
+%>
 	<div class="container">
 		<h2>Thanks For Playing!</h2>
 		<p>Don't forget to share your design!</p>
@@ -126,7 +129,10 @@
 		<p>Enter for your chance to win a Grand Prize DJ Set valued at $4,500!</p>
 		<%= link_to 'PLAY!', new_user_path, :class => 'btn btn-lg btn-primary' %>
 	</div>
-<% end %>
+<%
+		end
+	end
+%>
 
 <script>
 
