@@ -12,11 +12,11 @@
 //= require_self
 
 if($('#screen')){
-	var w = $('#white')[0];
-	var r = $('#red')[0];
-	var g = $('#green')[0];
-	var b = $('#blue')[0];
-	var y = $('#yellow')[0];
+	var rc = $('#rc')[0];
+	var gc = $('#gc')[0];
+	var bc = $('#bc')[0];
+	var yc = $('#yc')[0];
+	var wc = $('#wc')[0];
 }
 
 $(document).on('sjs:allPlayersReady', function(event){
@@ -31,7 +31,7 @@ $(document).ready(function(){
 	
 		$('#screen').height(($('#screen').width() / 16) * 9);
 
-		$.synchronizeVideos(0, 'white', 'red', 'green', 'blue', 'yellow');
+		$.synchronizeVideos(0, 'rc', 'gc', 'bc', 'yc', 'wc');
 
 		audio = $('#audio')[0];
 		audio.addEventListener('canplaythrough', function(){
@@ -111,25 +111,25 @@ $(document).ready(function(){
 function trigger(key){
 	console.log(key);
 	switch(key){
-		case 119,87://white
-			$('#screen').children('video').hide();
-			$('#white').show();
-			break;
 		case 114,82://red
 			$('#screen').children('video').hide();
-			$('#red').show();
+			$('#rc').show();
 			break;
 		case 103,71://green
 			$('#screen').children('video').hide();
-			$('#green').show();
+			$('#gc').show();
 			break;
 		case 98,66://blue
 			$('#screen').children('video').hide();
-			$('#blue').show();
+			$('#bc').show();
 			break;
 		case 121,89://yellow
 			$('#screen').children('video').hide();
-			$('#yellow').show();
+			$('#yc').show();
+			break;
+		case 119,87://white
+			$('#screen').children('video').hide();
+			$('#wc').show();
 			break;
 		case 32://blind
 			$('#blind-button').addClass('active');
