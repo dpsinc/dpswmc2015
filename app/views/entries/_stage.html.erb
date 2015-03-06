@@ -1,110 +1,117 @@
 <div id="screen">
-
-		<img id="blind" src="<%= image_path('blind.png') %>">
-		<img id="strobe" src="<%= image_path('strobe.png') %>">
-
-		<video id="rc" loop muted>
-			<source src="<%= video_path('rc.mp4') %>" type="video/mp4">
-		</video>
-
-		<video id="gc" loop muted>
-			<source src="<%= video_path('gc.mp4') %>" type="video/mp4">
-		</video>
-
-		<video id="bc" loop muted>
-			<source src="<%= video_path('bc.mp4') %>" type="video/mp4">
-		</video>
-
-		<video id="yc" loop muted>
-			<source src="<%= video_path('yc.mp4') %>" type="video/mp4">
-		</video>
-
-		<video id="wc" loop muted>
-			<source src="<%= video_path('wc.mp4') %>" type="video/mp4">
-		</video>
-
-		<audio id="audio">
-			<source src="<%= audio_path('audio.mp3') %>" type="audio/mpeg">
-		</audio>
-
-		<% if @entry.id.nil? %>
-			<div id="control">
-				<div class="row">
-					<div class="col-sm-2 col-xs-3">
-						<div class="btn-group btn-group-justified" role="group">
-							<div class="btn-group" role="group">
-								<button id="record" class="btn btn-danger disabled">Record</button>
-							</div>
-							<div class="btn-group" role="group">
-								<button id="play" class="btn btn-default disabled">Play</button>
-							</div>
+	<img id="blind" src="<%= image_path('blind.png') %>">
+	<img id="strobe" src="<%= image_path('strobe.png') %>">
+	<video id="rp" loop muted>
+		<source src="<%= video_path('rp.mp4') %>" type="video/mp4">
+	</video>
+	<video id="rc" loop muted>
+		<source src="<%= video_path('rc.mp4') %>" type="video/mp4">
+	</video>
+	<video id="gp" loop muted>
+		<source src="<%= video_path('gp.mp4') %>" type="video/mp4">
+	</video>
+	<video id="gc" loop muted>
+		<source src="<%= video_path('gc.mp4') %>" type="video/mp4">
+	</video>
+	<video id="bp" loop muted>
+		<source src="<%= video_path('bp.mp4') %>" type="video/mp4">
+	</video>
+	<video id="bc" loop muted>
+		<source src="<%= video_path('bc.mp4') %>" type="video/mp4">
+	</video>
+	<video id="yp" loop muted>
+		<source src="<%= video_path('yp.mp4') %>" type="video/mp4">
+	</video>
+	<video id="yc" loop muted>
+		<source src="<%= video_path('yc.mp4') %>" type="video/mp4">
+	</video>
+	<video id="wp" loop muted>
+		<source src="<%= video_path('wp.mp4') %>" type="video/mp4">
+	</video>
+	<video id="wc" loop muted>
+		<source src="<%= video_path('wc.mp4') %>" type="video/mp4">
+	</video>
+	<audio id="audio">
+		<source src="<%= audio_path('audio.mp3') %>" type="audio/mpeg">
+	</audio>
+	<% if @entry.id.nil? %>
+		<div id="control">
+			<div class="row">
+				<div class="col-sm-2 col-xs-3">
+					<div class="btn-group btn-group-justified" role="group">
+						<div class="btn-group" role="group">
+							<button id="record" class="btn btn-danger disabled">Record</button>
+						</div>
+						<div class="btn-group" role="group">
+							<button id="play" class="btn btn-default disabled">Play</button>
 						</div>
 					</div>
-					<div class="col-sm-8 col-xs-6">
-						<div class="progress">
-							<div class="progress-bar" role="progressbar" style="width: 0%;">
-							</div>
+				</div>
+				<div class="col-sm-8 col-xs-6">
+					<div class="progress">
+						<div class="progress-bar" role="progressbar" style="width: 0%;">
 						</div>
 					</div>
-					<div class="col-sm-2 col-xs-3">
-						<div class="btn-group btn-group-justified" role="group">
-							<div class="btn-group" role="group">
-								<button id="stop" class="btn btn-default disabled">Stop</button>
-							</div>
-							<div class="btn-group" role="group">
-								<button id="submit" class="btn btn-block btn-success">Submit</button>
-							</div>
+				</div>
+				<div class="col-sm-2 col-xs-3">
+					<div class="btn-group btn-group-justified" role="group">
+						<div class="btn-group" role="group">
+							<button id="stop" class="btn btn-default disabled">Stop</button>
+						</div>
+						<div class="btn-group" role="group">
+							<button id="submit" class="btn btn-block btn-success">Submit</button>
 						</div>
 					</div>
 				</div>
 			</div>
-		<% else %>
-			<div id="control">
-				<div class="row">
-					<div class="col-sm-2 col-xs-4">
-						<button id="play" class="btn btn-block btn-success disabled">Play</button>
-					</div>
-					<div class="col-sm-4 col-sm-offset-2 hidden-xs text-center">
-						<small class="text-uppercase">Created <%= @entry.created_at.strftime('%d/%m/%Y') %> by <%= @entry.user.name %></small>
-					</div>
-					<div class="col-sm-4 col-xs-8 text-right">
-						<ul class="list-inline">
-							<li class="hidden-xs"><small class="text-uppercase">Share</small></li>
-							<li>
-								<a data-url="https://www.facebook.com/sharer/sharer.php?u=<%=u request.original_url %>&output=embed" class="share facebook">
-									<span class="fa-stack">
-										<i class="fa fa-circle fa-stack-2x"></i>
-										<i class="fa fa-facebook fa-fw fa-stack-1x fa-inverse"></i>
-									</span>
-								</a>
-							</li>
-							<li>
-								<a data-url="https://twitter.com/home?status=<%=u request.original_url %>" class="share twitter">
-									<span class="fa-stack">
-										<i class="fa fa-circle fa-stack-2x"></i>
-										<i class="fa fa-twitter fa-fw fa-stack-1x fa-inverse"></i>
-									</span>
-								</a>
-							</li>
-							<li>
-								<a data-url="https://plus.google.com/share?url=<%=u request.original_url %>" class="share google">
-									<span class="fa-stack">
-										<i class="fa fa-circle fa-stack-2x"></i>
-										<i class="fa fa-google-plus fa-fw fa-stack-1x fa-inverse"></i>
-									</span>
-								</a>
-							</li>
-							<li>
-								<a data-url="https://www.linkedin.com/shareArticle?mini=true&url=<%=u request.original_url %>&title=<%=u 'Play The Light It Up Fantasy DJ Game!' %>&summary=<%=u 'Enter for your chance to win a Grand Prize DJ Set valued at $4,500!' %>&source=dpswmc2015.com" class="share linkedin">
-									<span class="fa-stack">
-										<i class="fa fa-circle fa-stack-2x"></i>
-										<i class="fa fa-linkedin fa-fw fa-stack-1x fa-inverse"></i>
-									</span>
-								</a>
-							</li>
-						</ul>
-					</div>
+		</div>
+	<% else %>
+		<div id="control">
+			<div class="row">
+				<div class="col-sm-2 col-xs-4">
+					<button id="play" class="btn btn-block btn-success disabled">Play</button>
+				</div>
+				<div class="col-sm-4 col-sm-offset-2 hidden-xs text-center">
+					<small class="text-uppercase">Created <%= @entry.created_at.strftime('%d/%m/%Y') %> by <%= @entry.user.name %></small>
+				</div>
+				<div class="col-sm-4 col-xs-8 text-right">
+					<ul class="list-inline">
+						<li class="hidden-xs"><small class="text-uppercase">Share</small></li>
+						<li>
+							<a data-url="https://www.facebook.com/sharer/sharer.php?u=<%=u request.original_url %>&output=embed" class="share facebook">
+								<span class="fa-stack">
+									<i class="fa fa-circle fa-stack-2x"></i>
+									<i class="fa fa-facebook fa-fw fa-stack-1x fa-inverse"></i>
+								</span>
+							</a>
+						</li>
+						<li>
+							<a data-url="https://twitter.com/home?status=<%=u request.original_url %>" class="share twitter">
+								<span class="fa-stack">
+									<i class="fa fa-circle fa-stack-2x"></i>
+									<i class="fa fa-twitter fa-fw fa-stack-1x fa-inverse"></i>
+								</span>
+							</a>
+						</li>
+						<li>
+							<a data-url="https://plus.google.com/share?url=<%=u request.original_url %>" class="share google">
+								<span class="fa-stack">
+									<i class="fa fa-circle fa-stack-2x"></i>
+									<i class="fa fa-google-plus fa-fw fa-stack-1x fa-inverse"></i>
+								</span>
+							</a>
+						</li>
+						<li>
+							<a data-url="https://www.linkedin.com/shareArticle?mini=true&url=<%=u request.original_url %>&title=<%=u 'Play The Light It Up Fantasy DJ Game!' %>&summary=<%=u 'Enter for your chance to win a Grand Prize DJ Set valued at $4,500!' %>&source=dpswmc2015.com" class="share linkedin">
+								<span class="fa-stack">
+									<i class="fa fa-circle fa-stack-2x"></i>
+									<i class="fa fa-linkedin fa-fw fa-stack-1x fa-inverse"></i>
+								</span>
+							</a>
+						</li>
+					</ul>
 				</div>
 			</div>
-		<% end %>
-	</div>
+		</div>
+	<% end %>
+</div>

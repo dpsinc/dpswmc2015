@@ -13,10 +13,15 @@
 
 if($('#screen')){
 	var rc = $('#rc')[0];
+	var rp = $('#rp')[0];
 	var gc = $('#gc')[0];
+	var gp = $('#gp')[0];
 	var bc = $('#bc')[0];
+	var bp = $('#bp')[0];
 	var yc = $('#yc')[0];
+	var yp = $('#yp')[0];
 	var wc = $('#wc')[0];
+	var wp = $('#wp')[0];
 }
 
 $(document).on('sjs:allPlayersReady', function(event){
@@ -31,7 +36,7 @@ $(document).ready(function(){
 	
 		$('#screen').height(($('#screen').width() / 16) * 9);
 
-		$.synchronizeVideos(0, 'rc', 'gc', 'bc', 'yc', 'wc');
+		$.synchronizeVideos(0, 'rc', 'rp', 'gc', 'gp', 'bc', 'bp', 'yc', 'yp', 'wc', 'wp');
 
 		audio = $('#audio')[0];
 		audio.addEventListener('canplaythrough', function(){
@@ -84,7 +89,7 @@ $(document).ready(function(){
 	}
 
 	if($('#record').length){
-		$(document).keydown(function(e){
+		$(document).keypress(function(e){
 			if(isPlaying){
 				e.preventDefault();
 				notes.push({
@@ -111,23 +116,48 @@ $(document).ready(function(){
 function trigger(key){
 	console.log(key);
 	switch(key){
-		case 114,82://red
+		//red
+		case 114://pan
+			$('#screen').children('video').hide();
+			$('#rp').show();
+			break;
+		case 82://circle
 			$('#screen').children('video').hide();
 			$('#rc').show();
 			break;
-		case 103,71://green
+		//green
+		case 103://pan
+			$('#screen').children('video').hide();
+			$('#gp').show();
+			break;
+		case 71://circle
 			$('#screen').children('video').hide();
 			$('#gc').show();
 			break;
-		case 98,66://blue
+		//blue
+		case 98://pan
+			$('#screen').children('video').hide();
+			$('#bp').show();
+			break;
+		case 66://circle
 			$('#screen').children('video').hide();
 			$('#bc').show();
 			break;
-		case 121,89://yellow
+		//yellow
+		case 121://pan
+			$('#screen').children('video').hide();
+			$('#yp').show();
+			break;
+		case 89://circle
 			$('#screen').children('video').hide();
 			$('#yc').show();
 			break;
-		case 119,87://white
+		//white
+		case 119://pan
+			$('#screen').children('video').hide();
+			$('#wp').show();
+			break;
+		case 87://circle
 			$('#screen').children('video').hide();
 			$('#wc').show();
 			break;
