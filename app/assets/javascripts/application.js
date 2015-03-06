@@ -118,48 +118,48 @@ function trigger(key){
 	switch(key){
 		//red
 		case 114://pan
-			$('#screen').children('video').hide();
 			$('#rp').show();
+			$('#screen').children('video').not('#rp').hide();
 			break;
 		case 82://circle
-			$('#screen').children('video').hide();
 			$('#rc').show();
+			$('#screen').children('video').not('#rc').hide();
 			break;
 		//green
 		case 103://pan
-			$('#screen').children('video').hide();
 			$('#gp').show();
+			$('#screen').children('video').not('#gp').hide();
 			break;
 		case 71://circle
-			$('#screen').children('video').hide();
 			$('#gc').show();
+			$('#screen').children('video').not('#gc').hide();
 			break;
 		//blue
 		case 98://pan
-			$('#screen').children('video').hide();
 			$('#bp').show();
+			$('#screen').children('video').not('#bp').hide();
 			break;
 		case 66://circle
-			$('#screen').children('video').hide();
 			$('#bc').show();
+			$('#screen').children('video').not('#bc').hide();
 			break;
 		//yellow
 		case 121://pan
-			$('#screen').children('video').hide();
 			$('#yp').show();
+			$('#screen').children('video').not('#yp').hide();
 			break;
 		case 89://circle
-			$('#screen').children('video').hide();
 			$('#yc').show();
+			$('#screen').children('video').not('#yc').hide();
 			break;
 		//white
 		case 119://pan
-			$('#screen').children('video').hide();
 			$('#wp').show();
+			$('#screen').children('video').not('#wp').hide();
 			break;
 		case 87://circle
-			$('#screen').children('video').hide();
 			$('#wc').show();
+			$('#screen').children('video').not('#wc').hide();
 			break;
 		case 32://blind
 			$('#blind-button').addClass('active');
