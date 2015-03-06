@@ -3,12 +3,8 @@
 //= require bootstrap-sprockets
 //= require AudioContextMonkeyPatch
 //= require metronome
-//= require soundmanager2
-//= require PxLoader
-//= require PxLoaderImage
-//= require PxLoaderSound
-//= require PxLoaderVideo
 //= require synchronize-min
+//= require mediagroup
 //= require_self
 
 if($('#screen')){
