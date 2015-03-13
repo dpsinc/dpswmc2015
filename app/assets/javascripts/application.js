@@ -3,11 +3,10 @@
 //= require bootstrap-sprockets
 //= require AudioContextMonkeyPatch
 //= require metronome
-//= require synchronize-min
 //= require mediagroup
 //= require_self
 
-if($('#screen')){
+if($('#screen').length){
 	var rc = $('#rc')[0];
 	var rp = $('#rp')[0];
 	var gc = $('#gc')[0];
@@ -20,19 +19,21 @@ if($('#screen')){
 	var wp = $('#wp')[0];
 }
 
+/*
 $(document).on('sjs:allPlayersReady', function(event){
 	$('#record').removeClass('disabled');
 	$('#play').removeClass('disabled');
 	console.log('sync');
 });
+*/
 
 $(document).ready(function(){
 
-	if($('#screen')){
+	if($('#screen').length){
 	
 		$('#screen').height(($('#screen').width() / 16) * 9);
 
-		$.synchronizeVideos(0, 'rc', 'rp', 'gc', 'gp', 'bc', 'bp', 'yc', 'yp', 'wc', 'wp');
+		//$.synchronizeVideos(0, 'rc', 'rp', 'gc', 'gp', 'bc', 'bp', 'yc', 'yp', 'wc', 'wp');
 
 		audio = $('#audio')[0];
 		audio.addEventListener('canplaythrough', function(){
@@ -48,10 +49,24 @@ $(document).ready(function(){
 		}, false);
 	
 		$('#record').click(function(){
-			$('#record').addClass('btn-default');
-			$('#record').removeClass('btn-danger');
-			$('#record').text('Stop');
-			//$('#submit').addClass('disabled');
+			$('#record').addClass('disabled');
+			$('#stop').removeClass('disabled');
+			$('#submit').addClass('disabled');
+			play();
+		});
+		$('#stop').click(function(){
+			$('#stop').addClass('disabled');
+			if(!jQuery.isEmptyObject(notes)){
+				$('#play').removeClass('disabled');
+				$('#submit').removeClass('disabled');
+			}
+			play();
+		});
+		$('#play').click(function(){
+			$('#record').addClass('disabled');
+			$('#stop').removeClass('disabled');
+			$('#play').addClass('disabled');
+			$('#submit').addClass('disabled');
 			play();
 		});
 		$('#submit').click(function(){
@@ -66,9 +81,6 @@ $(document).ready(function(){
 					window.location = '/entries/' + data.id;
 				}
 			});
-		});
-		$('#play').click(function(){
-			play();
 		});
 	
 		audioContext = new AudioContext();

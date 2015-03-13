@@ -63,6 +63,16 @@ function scheduler(){
 }
 
 function play(){
+	rc = document.getElementById('rc');
+	rp = document.getElementById('rp');
+	gc = document.getElementById('gc');
+	gp = document.getElementById('gp');
+	bc = document.getElementById('bc');
+	bp = document.getElementById('bp');
+	yc = document.getElementById('yc');
+	yp = document.getElementById('yp');
+	wc = document.getElementById('wc');
+	wp = document.getElementById('wp');
 	isPlaying = !isPlaying;
 	if(isPlaying){
 		note = 0;
@@ -70,14 +80,46 @@ function play(){
 		nextNoteTime = audioContext.currentTime;
 		timerWorker.postMessage('start');
 		audio.play();
-		$(document).trigger('sjs:play', []);
+// 		$(document).trigger('sjs:play', []);
+		rc.play();
+		rp.play();
+		gc.play();
+		gp.play();
+		bc.play();
+		bp.play();
+		yc.play();
+		yp.play();
+		wc.play();
+		wp.play();
 		return 'Stop';
 	}else{
 		timerWorker.postMessage('stop');
 		audio.pause();
 		audio.currentTime = 0;
+/*
 		$(document).trigger('sjs:play', []);
 		$(document).trigger('sjs:setCurrentTime', [], 0);
+*/
+		rc.pause();
+		rp.pause();
+		gc.pause();
+		gp.pause();
+		bc.pause();
+		bp.pause();
+		yc.pause();
+		yp.pause();
+		wc.pause();
+		wp.pause();
+		rc.currentTime = 0;
+		rp.currentTime = 0;
+		gc.currentTime = 0;
+		gp.currentTime = 0;
+		bc.currentTime = 0;
+		bp.currentTime = 0;
+		yc.currentTime = 0;
+		yp.currentTime = 0;
+		wc.currentTime = 0;
+		wp.currentTime = 0;
 		$('#screen').children('video').hide();
 		$('#record').addClass('btn-danger');
 		$('#record').removeClass('btn-default');
