@@ -38,6 +38,7 @@ $(document).ready(function(){
 		audio = $('#audio')[0];
 		audio.addEventListener('canplaythrough', function(){
 			$('#record').removeClass('disabled');
+			$('#play').removeClass('disabled');
 		}, false);
 		audio.addEventListener('timeupdate', function(){
 			$('.progress-bar').css('width', (audio.currentTime / audio.duration) * 100 + '%');
@@ -126,48 +127,48 @@ function trigger(key){
 	switch(key){
 		//red
 		case 114://pan
-			$('#rp').show();
-			$('#screen').children('video').not('#rp').hide();
+			$('#rp').css('z-index', '0');
+			$('#screen').children('video').not('#rp').css('z-index', '-1');
 			break;
 		case 82://circle
-			$('#rc').show();
-			$('#screen').children('video').not('#rc').hide();
+			$('#rc').css('z-index', '0');
+			$('#screen').children('video').not('#rc').css('z-index', '-1');
 			break;
 		//green
 		case 103://pan
-			$('#gp').show();
-			$('#screen').children('video').not('#gp').hide();
+			$('#gp').css('z-index', '0');
+			$('#screen').children('video').not('#gp').css('z-index', '-1');
 			break;
 		case 71://circle
-			$('#gc').show();
-			$('#screen').children('video').not('#gc').hide();
+			$('#gc').css('z-index', '0');
+			$('#screen').children('video').not('#gc').css('z-index', '-1');
 			break;
 		//blue
 		case 98://pan
-			$('#bp').show();
-			$('#screen').children('video').not('#bp').hide();
+			$('#bp').css('z-index', '0');
+			$('#screen').children('video').not('#bp').css('z-index', '-1');
 			break;
 		case 66://circle
-			$('#bc').show();
-			$('#screen').children('video').not('#bc').hide();
+			$('#bc').css('z-index', '0');
+			$('#screen').children('video').not('#bc').css('z-index', '-1');
 			break;
 		//yellow
 		case 121://pan
-			$('#yp').show();
-			$('#screen').children('video').not('#yp').hide();
+			$('#yp').css('z-index', '0');
+			$('#screen').children('video').not('#yp').css('z-index', '-1');
 			break;
 		case 89://circle
-			$('#yc').show();
-			$('#screen').children('video').not('#yc').hide();
+			$('#yc').css('z-index', '0');
+			$('#screen').children('video').not('#yc').css('z-index', '-1');
 			break;
 		//white
 		case 119://pan
-			$('#wp').show();
-			$('#screen').children('video').not('#wp').hide();
+			$('#wp').css('z-index', '0');
+			$('#screen').children('video').not('#wp').css('z-index', '-1');
 			break;
 		case 87://circle
-			$('#wc').show();
-			$('#screen').children('video').not('#wc').hide();
+			$('#wc').css('z-index', '0');
+			$('#screen').children('video').not('#wc').css('z-index', '-1');
 			break;
 		case 32://blind
 			$('#blind-button').addClass('active');

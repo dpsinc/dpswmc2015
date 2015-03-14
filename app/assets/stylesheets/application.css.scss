@@ -94,12 +94,12 @@ ul, ol{
 	width: 100%;
 }
 	#screen img, #screen video{
-		display: none;
 		height: auto;
 		left: 0;
 		position: absolute;
 		top: 0;
 		width: 100%;
+		z-index: -1;
 	}
 
 #control{
