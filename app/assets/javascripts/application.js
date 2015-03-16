@@ -112,7 +112,7 @@ $(document).ready(function(){
 		$(document).keyup(function(e){
 			if(isPlaying){
 				e.preventDefault();
-				if(e.which == 65 || e.which == 68 || e.which == 83 || e.which == 88){
+				if(e.which == 65 || e.which == 68 || e.which == 83 || e.which == 88 || e.which == 79 || e.which == 80){
 					notes.push({
 						note: note,
 						key: e.which
