@@ -3,6 +3,8 @@ class UsersController < ApplicationController
 
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
+  layout "frontpage"
+
   # GET /users
   def index
     @users = User.all
@@ -14,8 +16,8 @@ class UsersController < ApplicationController
 
   # GET /users/new
   def new
-    layout "another"
     @user = User.new
+    render layout: "frontpage"
   end
 
   # GET /users/1/edit

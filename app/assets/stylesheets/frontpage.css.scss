@@ -1,0 +1,205 @@
+/*
+ *= require frontpage/style
+ *= require frontpage/style-responsive
+ *= require_self
+ */
+
+
+ body {
+        -webkit-font-smoothing: antialiased;        
+      }
+
+      a.next-block {
+
+        display: block;
+        position: absolute;
+        bottom: 10px;
+        left: -30px;
+        margin: 0 50%;
+        position: absolute;
+        z-index: 1000;
+        height: 60px;
+        width: 60px;
+        bottom: 50px;
+        background: image-url("NextDownArrow.svg") no-repeat center center;
+        background-size: 60px 60px;
+      }
+      
+      .btn-lg {
+        line-height: 2;
+        font-size: 15px;
+        background-color: #8DC44B;
+        border-color: #8DC44B;
+      }
+
+
+      #contest {
+        background: image-url("contest_container_bkg.png") center center repeat-y fixed;
+        margin: 0 auto;
+        overflow: hidden;
+        padding: 0;
+        background-size: 100%;
+      }
+      .cutout_people {
+        background: image-url("contest_cutout_parallax_bkg.png") bottom center no-repeat fixed;
+        margin: 0 auto;
+        padding: 0;
+        background-size: 100%;
+      }
+      #poolparty {
+        background: image-url("poolparty_bkg.png") center center no-repeat fixed;
+        margin: 0 auto;
+        overflow: hidden;
+        padding: 0;
+        background-size: 100%;
+      }
+      .content-block {
+        overflow: hidden;
+        position:relative;
+
+      }
+
+      .content-block p {
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 1.5;
+      }
+
+      .content-block h1 {
+        font-size: 36px;
+        font-weight: 700;
+        line-height: 1.6;
+      }
+      .content-block h2 {
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 1.5;
+      }
+
+      .content-block small {
+        text-shadow: none;
+        color: #ddd;
+      }
+      .content-block strong {
+        color: #DCFFC0;
+        font-style: italic;
+      }
+
+      .content-block .container, .content-block .container-fluid {
+        margin-top:50px;
+        z-index: 1200;
+        position: relative;
+        margin-bottom:100px;
+      }
+      .anchorwrap {
+        margin:0 auto;
+        width:100%;
+        position: absolute;
+        bottom: 0px;
+      }
+      .parallax_wrap  {
+        margin:0 auto;
+        width:100%;
+        position: absolute;
+        top: 0px;
+        height:100%;
+      }
+      .poolparty_caustics {
+        background: image-url("poolparty_parallax_bkg.png") center center no-repeat fixed;
+        margin: 0 auto;
+        padding: 0;
+        background-size: 100%;
+      }
+
+      .poolparty_beachball {
+        background: image-url("poolparty_beachball.png") center center no-repeat fixed;
+        margin: 0 auto;
+        padding: 0;
+        background-size: 100%;
+        z-index: 200;
+      }
+
+
+      #contest {
+        background-color: #0E0D54;
+      }
+
+      .btn_wrap {
+        text-align: center;
+      }
+      .video_wrap video {
+        z-index: 5;
+        width: 100%;
+        height: 100%;
+        display: block;
+        top: 0px;
+        left: 0px;
+        box-sizing: content-box;
+        object-fit: inherit;
+
+      }
+      .content_wrap {
+        top: 0px;
+        left:0px;
+        height: 100%;
+        width:  100%;
+
+      }
+      .content_wrap .gradient_overlay, .content_wrap .video_wrap {
+        height: 100%;
+        width: 100%;
+        top: 0px;
+        left: 0px;
+        position: absolute;
+        margin-top: 0px;
+        margin-bottom: 0px;
+
+      }
+      .content_wrap .gradient_overlay{
+        background: image-url("hero_bkg.png") repeat-x center center;
+        z-index: 10;
+        background-size: 100%;
+      }
+
+      .content_wrap .container_wrap {
+        height: 100%;
+        width: 100%;
+        top: 0px;
+        left: 0px;
+        position: absolute;
+        margin-top: 0px;
+        margin-bottom: 0px;
+      }
+
+      .social-icon{
+        border-radius: 50%;
+        color: #fff!important;
+        display: inline-block;
+        height: 32px;
+        line-height: 32px;
+        text-align: center;
+        width: 32px;
+        font-size: 15px;
+
+      }
+        .social-icon.facebook{
+          background-color: #3b5998;
+        }
+        .social-icon.google{
+          background-color: #dd4b39;
+        }
+        .social-icon.instagram{
+          background-color: #517fa4;
+        }
+        .social-icon.linkedin{
+          background-color: #007bb6;
+        }
+        .social-icon.pinterest{
+          background-color: #cb2027;
+        }
+        .social-icon.twitter{
+          background-color: #00aced;
+        }
+        .social-icon.youtube{
+          background-color: #bb0000;
+        }
