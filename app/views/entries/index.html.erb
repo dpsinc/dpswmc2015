@@ -5,6 +5,7 @@
 			<tr>
 				<th>User</th>
 				<th>Date</th>
+				<th>Views</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -12,6 +13,7 @@
 				<tr>
 					<td><%= link_to entry.user.name, entry %></td>
 					<td><%= entry.created_at.strftime('%d/%m/%Y') %></td>
+					<td><%= entry.impressions_count.to_i %></td>
 				</tr>
 			<% end %>
 		</tbody>

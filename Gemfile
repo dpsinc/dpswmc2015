@@ -17,3 +17,5 @@ gem 'jquery-rails'
 gem 'sass-rails'
 gem 'bootstrap-sass'
 gem 'font-awesome-sass'
+
+gem 'impressionist'

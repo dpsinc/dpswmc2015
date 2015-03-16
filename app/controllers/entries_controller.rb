@@ -1,13 +1,16 @@
 class EntriesController < ApplicationController
+
   http_basic_authenticate_with :name => 'dpsinc', :password => 'T0ny!remix', only: [:index]
 
   before_action :get_user, only: [:show]
   before_action :set_user, only: [:new, :create]
   before_action :set_entry, only: [:show, :edit, :update, :destroy]
 
+  impressionist :actions => [:show]
+
   # GET /entries
   def index
-    @entries = Entry.all
+    @entries = Entry.all.order(impressions_count: :desc)
   end
 
   # GET /entries/1
