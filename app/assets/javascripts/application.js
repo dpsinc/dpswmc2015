@@ -19,18 +19,12 @@ if($('#screen').length){
 	var wp = $('#wp')[0];
 }
 
-/*
-$(document).on('sjs:allPlayersReady', function(event){
-	$('#record').removeClass('disabled');
-	$('#play').removeClass('disabled');
-	console.log('sync');
-});
-*/
-
 $(document).ready(function(){
 
 	if($('#keyboard').length){
-		h = $('#keyboard').width();
+		keyboard = $('#keyboard').width();
+		keys = keyboard / 10;
+		$('.keys .key').width(keys);
 	}
 
 	if($('#screen').length){

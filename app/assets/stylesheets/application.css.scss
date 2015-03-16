@@ -83,6 +83,20 @@ ul, ol{
 		background-color: #333;
 	}
 
+.modal-backdrop.in{
+	opacity: 0.5;
+}
+.modal-content{
+	background: rgba(0,0,0,0.5);
+}
+
+#keyboard{
+	
+}
+	.keys li{
+		padding: 0;
+	}
+
 #screen{
 	background-image: image-url('player.jpg');
 	background-position: center center;
