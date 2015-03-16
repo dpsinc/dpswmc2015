@@ -38,7 +38,8 @@ var Layout = function () {
     var handleNavItemCurrent = function () {
         $(".header-navigation").onePageNav({
             currentClass: "current",
-            scrollThreshold: 0
+            scrollThreshold: 0,
+            filter: ':not(".noNav")'
         });
     }
 
@@ -86,33 +87,6 @@ var Layout = function () {
                 Go2TopOperation();
             });
         }
-    }
-
-    function handleBootstrap() {
-        $(".carousel").carousel({
-            interval: 15000,
-            pause: "hover"
-        });
-        $(".tooltips").tooltip();
-        $(".popovers").popover();
-    }
-
-    function handleCounter() {
-        /*$('.counter').counterUp({
-            delay: 10,
-            time: 1000
-        });*/
-    }
-
-    var handlePortfolioSorting = function () {
-        /*$(".sorting-grid").mixitup();*/
-    }
-
-    var handleFancybox = function () {
-        if (!jQuery.fancybox) {
-            return;
-        }
-        $(".zoom").fancybox();
     }
 
     var handleMobiToggler = function () {
@@ -235,18 +209,13 @@ var Layout = function () {
 
     return {
         init: function () {
-            //handlePromoBlock();
             resize();
             nextNav();
             handleParallax();
             handleScrolling();
             handleNavItemCurrent();
             handleHeaderPosition();
-            handleBootstrap();
-            handleCounter();
             handleGo2Top();
-            handlePortfolioSorting();
-            handleFancybox();
             handleMobiToggler();
             handleTwitter();
             valignCenterMessage();
