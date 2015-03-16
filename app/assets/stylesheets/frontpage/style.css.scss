@@ -16,7 +16,6 @@ h1, h2, h3, h4, h5, h6 {
   opacity: 0.7;
 }
 
-/* links styles */
 a, a:focus, a:hover, a:active {
   color: #8DC44B;
   outline: 0;
@@ -27,7 +26,6 @@ a:hover {
   text-decoration: underline;
 }
 
-/* Global classes */
 ::-moz-selection {
   color: #fff;
   background: #8DC44B;
@@ -53,12 +51,6 @@ a:hover {
   visibility: hidden;
   font-size: 0;
   line-height: 0;
-}
-*html .clearfix {
-  zoom: 1;
-}
-*+html .clearfix {
-  zoom: 1;
 }
 .clear {
   clear: both; 
@@ -291,28 +283,7 @@ a:hover {
   height: 100%;
 }
 
-/* panels style */
-/*.panel-default {
-  border-color: #ecf0f1;
-}
-.panel-default > .panel-heading {
-  background: #ecf0f1;
-  border-color: #ecf0f1;
-  color: #333;  
-}
-.panel-default > .panel-heading h4 {
-  font: 300 16px "Open Sans", sans-serif;
-  padding: 0;
-  margin-bottom: 0;
-}
-.panel-default > .panel-heading a {
-  text-decoration: none;
-  color: inherit;
-}
-.panel-default > .panel-heading a:active,
-.panel-default > .panel-heading a:focus {
-  color: inherit;
-}*/
+
 
 /* Header and header elements */
 .header {
@@ -373,13 +344,13 @@ a:hover {
   display: none;
   margin: 15px 15px 0;
   position: relative;
-  background: url(../img/toggler.png) no-repeat 6px 8px;
+  background: image-url("frontpage/toggler.png") no-repeat 6px 8px;
 }
 .header .mobi-toggler i {
   display: none;
 }
 .header .mobi-toggler:hover {
-  background: #8DC44B url(../img/toggler.png) no-repeat 6px -28px;
+  background: #8DC44B image-url("frontpage/toggler.png") no-repeat 6px -28px;
   border-color: #8DC44B;
   color: #fff;
 }

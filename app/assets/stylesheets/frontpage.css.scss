@@ -21,7 +21,7 @@
         height: 60px;
         width: 60px;
         bottom: 50px;
-        background: image-url("NextDownArrow.svg") no-repeat center center;
+        background: image-url("frontpage/next_block_button@2x.png") no-repeat center center;
         background-size: 60px 60px;
       }
       
@@ -34,20 +34,20 @@
 
 
       #contest {
-        background: image-url("contest_container_bkg.png") center center repeat-y fixed;
+        background: image-url("frontpage/contest_container_bkg.png") center center repeat-y fixed;
         margin: 0 auto;
         overflow: hidden;
         padding: 0;
         background-size: 100%;
       }
       .cutout_people {
-        background: image-url("contest_cutout_parallax_bkg.png") bottom center no-repeat fixed;
+        background: image-url("frontpage/contest_cutout_parallax_bkg.png") bottom center no-repeat fixed;
         margin: 0 auto;
         padding: 0;
         background-size: 100%;
       }
       #poolparty {
-        background: image-url("poolparty_bkg.png") center center no-repeat fixed;
+        background: image-url("frontpage/poolparty_bkg.png") center center no-repeat fixed;
         margin: 0 auto;
         overflow: hidden;
         padding: 0;
@@ -105,14 +105,14 @@
         height:100%;
       }
       .poolparty_caustics {
-        background: image-url("poolparty_parallax_bkg.png") center center no-repeat fixed;
+        background: image-url("frontpage/poolparty_parallax_bkg.png") center center no-repeat fixed;
         margin: 0 auto;
         padding: 0;
         background-size: 100%;
       }
 
       .poolparty_beachball {
-        background: image-url("poolparty_beachball.png") center center no-repeat fixed;
+        background: image-url("frontpage/poolparty_beachball.png") center center no-repeat fixed;
         margin: 0 auto;
         padding: 0;
         background-size: 100%;
@@ -156,7 +156,7 @@
 
       }
       .content_wrap .gradient_overlay{
-        background: image-url("hero_bkg.png") repeat-x center center;
+        background: image-url("frontpage/hero_bkg.png") repeat-x center center;
         z-index: 10;
         background-size: 100%;
       }

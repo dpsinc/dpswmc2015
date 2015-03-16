@@ -25,7 +25,7 @@
 			var tmp_img = jqez.img;
 			jqez.img = [tmp_img]
 		}
-		console.log(jqez.target);
+		// console.log(jqez.target);
 		
 /*
 		****** Removed Object Creation ****** - TH
