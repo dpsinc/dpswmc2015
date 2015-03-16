@@ -118,6 +118,24 @@ var Layout = function () {
         });
     }
 
+    var handleMobile = function () {
+        var video = $("#hero video"),
+            img = $("#hero .video_wrap img");
+        if (isMobileDevice() === true) {
+                video.hide();
+                img.show();
+
+                content = "Game play is not supported on Mobile Devices";
+
+                var modalBody = $("#loginModal .modal-body");
+                modalBody.empty();
+                modalBody.append("<h1 class='content-center'>"+ content + "</h1>");
+
+        } else {
+            img.remove();
+        }
+    }
+
     var handleTwitter = function () {
         !function(d,s,id) {
                 var js,
@@ -209,6 +227,7 @@ var Layout = function () {
 
     return {
         init: function () {
+            handleMobile();
             resize();
             nextNav();
             handleParallax();
