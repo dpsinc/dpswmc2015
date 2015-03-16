@@ -1,10 +1,5 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap-sprockets
-//= require frontpage/jquery.easing
-//= require frontpage/jquery.parallax
-//= require frontpage/jquery.scrollTo.min
-//= require frontpage/ez-bg-resize
-//= require frontpage/nav
-//= require frontpage/layout
+//= require_tree ./frontpage
 //= require_self
