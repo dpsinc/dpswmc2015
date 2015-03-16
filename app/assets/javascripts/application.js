@@ -40,8 +40,6 @@ $(document).ready(function(){
 	
 		$('#screen').height(($('#screen').width() / 16) * 9);
 
-		//$.synchronizeVideos(0, 'rc', 'rp', 'gc', 'gp', 'bc', 'bp', 'yc', 'yp', 'wc', 'wp');
-
 		audio = $('#audio')[0];
 		audio.addEventListener('canplaythrough', function(){
 			$('#record').removeClass('disabled');
