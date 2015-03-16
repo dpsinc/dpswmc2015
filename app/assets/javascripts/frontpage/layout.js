@@ -38,7 +38,8 @@ var Layout = function () {
     var handleNavItemCurrent = function () {
         $(".header-navigation").onePageNav({
             currentClass: "current",
-            scrollThreshold: 0
+            scrollThreshold: 0,
+            filter: ':not(".noNav")'
         });
     }
 
@@ -88,33 +89,6 @@ var Layout = function () {
         }
     }
 
-    function handleBootstrap() {
-        $(".carousel").carousel({
-            interval: 15000,
-            pause: "hover"
-        });
-        $(".tooltips").tooltip();
-        $(".popovers").popover();
-    }
-
-    function handleCounter() {
-        /*$('.counter').counterUp({
-            delay: 10,
-            time: 1000
-        });*/
-    }
-
-    var handlePortfolioSorting = function () {
-        /*$(".sorting-grid").mixitup();*/
-    }
-
-    var handleFancybox = function () {
-        if (!jQuery.fancybox) {
-            return;
-        }
-        $(".zoom").fancybox();
-    }
-
     var handleMobiToggler = function () {
         $(".mobi-toggler").on("click", function(event) {
             event.preventDefault();//the default action of the event will not be triggered
@@ -142,6 +116,24 @@ var Layout = function () {
         $(window).resize(function() {
             SlideUpMenu();
         });
+    }
+
+    var handleMobile = function () {
+        var video = $("#hero video"),
+            img = $("#hero .video_wrap img");
+        if (isMobileDevice() === true) {
+                video.hide();
+                img.show();
+
+                content = "Game play is not supported on Mobile Devices";
+
+                var modalBody = $("#loginModal .modal-body");
+                modalBody.empty();
+                modalBody.append("<h1 class='content-center'>"+ content + "</h1>");
+
+        } else {
+            img.remove();
+        }
     }
 
     var handleTwitter = function () {
@@ -235,18 +227,14 @@ var Layout = function () {
 
     return {
         init: function () {
-            //handlePromoBlock();
+            handleMobile();
             resize();
             nextNav();
             handleParallax();
             handleScrolling();
             handleNavItemCurrent();
             handleHeaderPosition();
-            handleBootstrap();
-            handleCounter();
             handleGo2Top();
-            handlePortfolioSorting();
-            handleFancybox();
             handleMobiToggler();
             handleTwitter();
             valignCenterMessage();
