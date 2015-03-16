@@ -29,6 +29,10 @@ $(document).on('sjs:allPlayersReady', function(event){
 
 $(document).ready(function(){
 
+	if($('#keyboard').length){
+		h = $('#keyboard').width();
+	}
+
 	if($('#screen').length){
 	
 		$('#screen').height(($('#screen').width() / 16) * 9);
