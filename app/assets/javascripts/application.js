@@ -112,12 +112,14 @@ $(document).ready(function(){
 		$(document).keyup(function(e){
 			if(isPlaying){
 				e.preventDefault();
-				notes.push({
-					note: note,
-					key: e.which
-				});
-				trigger(e.which);
-				console.log('note: ' + note + ', key: ' + e.which);
+				if(e.which == 65 || e.which == 68 || e.which == 83 || e.which == 88){
+					notes.push({
+						note: note,
+						key: e.which
+					});
+					trigger(e.which);
+					console.log('note: ' + note + ', key: ' + e.which);
+				}
 			}
 		});
 	}
@@ -138,47 +140,47 @@ function trigger(key){
 	switch(key){
 		//red
 		case 114://pan
-			$('#rp').css('z-index', '0');
+			$('#rp').css('z-index', '1');
 			$('#screen').children('video').not('#rp').css('z-index', '-1');
 			break;
 		case 82://circle
-			$('#rc').css('z-index', '0');
+			$('#rc').css('z-index', '1');
 			$('#screen').children('video').not('#rc').css('z-index', '-1');
 			break;
 		//green
 		case 103://pan
-			$('#gp').css('z-index', '0');
+			$('#gp').css('z-index', '1');
 			$('#screen').children('video').not('#gp').css('z-index', '-1');
 			break;
 		case 71://circle
-			$('#gc').css('z-index', '0');
+			$('#gc').css('z-index', '1');
 			$('#screen').children('video').not('#gc').css('z-index', '-1');
 			break;
 		//blue
 		case 98://pan
-			$('#bp').css('z-index', '0');
+			$('#bp').css('z-index', '1');
 			$('#screen').children('video').not('#bp').css('z-index', '-1');
 			break;
 		case 66://circle
-			$('#bc').css('z-index', '0');
+			$('#bc').css('z-index', '1');
 			$('#screen').children('video').not('#bc').css('z-index', '-1');
 			break;
 		//yellow
 		case 121://pan
-			$('#yp').css('z-index', '0');
+			$('#yp').css('z-index', '1');
 			$('#screen').children('video').not('#yp').css('z-index', '-1');
 			break;
 		case 89://circle
-			$('#yc').css('z-index', '0');
+			$('#yc').css('z-index', '1');
 			$('#screen').children('video').not('#yc').css('z-index', '-1');
 			break;
 		//white
 		case 119://pan
-			$('#wp').css('z-index', '0');
+			$('#wp').css('z-index', '1');
 			$('#screen').children('video').not('#wp').css('z-index', '-1');
 			break;
 		case 87://circle
-			$('#wc').css('z-index', '0');
+			$('#wc').css('z-index', '1');
 			$('#screen').children('video').not('#wc').css('z-index', '-1');
 			break;
 		case 97://blind1on
@@ -194,10 +196,42 @@ function trigger(key){
 			$('#b2').stop().fadeTo(500, 0);
 			break;
 		case 115://strobeOn
-			strobeOn();
+			$('#s1').stop().fadeTo(10, 1);
+// 			strobeOn();
 			break;
 		case 83://strobeOff
-			strobeOff();
+			$('#s1').stop().fadeTo(10, 0);
+// 			strobeOff();
+			break;
+		case 111://off
+			$('#blank').css('z-index', 2);
+			break;
+		case 79://on
+			$('#blank').css('z-index', 0);
+			break;
+		case 112://pause
+			rc.pause();
+			rp.pause();
+			gc.pause();
+			gp.pause();
+			bc.pause();
+			bp.pause();
+			yc.pause();
+			yp.pause();
+			wc.pause();
+			wp.pause();
+			break;
+		case 80://play
+			rc.play();
+			rp.play();
+			gc.play();
+			gp.play();
+			bc.play();
+			bp.play();
+			yc.play();
+			yp.play();
+			wc.play();
+			wp.play();
 			break;
 		default:
 	}
@@ -206,15 +240,11 @@ function trigger(key){
 //	STROBE
 var strobe;
 function strobeOn(){
-	if($('#s1').is(':hidden')){
-		strobe = setInterval(function(){
-			$('#s1').show(0).delay(250).hide(0);
-		}, 500);
-console.log('on');
-	}	
+	strobe = setInterval(function(){
+		$('#s1').show(0).delay(250).hide(0);
+	}, 500);
 }
 function strobeOff(){
 	clearInterval(strobe);
-	$('#s1').hide();
-console.log('off');
+	$('#s1').stop(true, true).hide(0);
 }
