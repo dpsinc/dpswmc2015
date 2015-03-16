@@ -109,6 +109,17 @@ $(document).ready(function(){
 				console.log('note: ' + note + ', key: ' + e.which);
 			}
 		});
+		$(document).keyup(function(e){
+			if(isPlaying){
+				e.preventDefault();
+				notes.push({
+					note: note,
+					key: e.which
+				});
+				trigger(e.which);
+				console.log('note: ' + note + ', key: ' + e.which);
+			}
+		});
 	}
 
 	$('.share').click(function(){
@@ -170,16 +181,40 @@ function trigger(key){
 			$('#wc').css('z-index', '0');
 			$('#screen').children('video').not('#wc').css('z-index', '-1');
 			break;
-		case 32://blind
-			$('#blind-button').addClass('active');
-			$('#blind').stop().fadeTo(10, 1);
-			// $('#blind').fadeIn();
+		case 97://blind1on
+			$('#b1').stop().fadeTo(10, 1);
 			break;
-		case 83://strobe
-			$('#strobe-button').addClass('active');
-			// strobeOn();
-			$('#strobe').show();
+		case 65://blind1off
+			$('#b1').stop().fadeTo(500, 0);
+			break;
+		case 100://blind2on
+			$('#b2').stop().fadeTo(10, 1);
+			break;
+		case 68://blind2off
+			$('#b2').stop().fadeTo(500, 0);
+			break;
+		case 115://strobeOn
+			strobeOn();
+			break;
+		case 83://strobeOff
+			strobeOff();
 			break;
 		default:
 	}
+}
+
+//	STROBE
+var strobe;
+function strobeOn(){
+	if($('#s1').is(':hidden')){
+		strobe = setInterval(function(){
+			$('#s1').show(0).delay(250).hide(0);
+		}, 500);
+console.log('on');
+	}	
+}
+function strobeOff(){
+	clearInterval(strobe);
+	$('#s1').hide();
+console.log('off');
 }

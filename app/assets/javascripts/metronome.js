@@ -63,6 +63,9 @@ function scheduler(){
 }
 
 function play(){
+	b1 = document.getElementById('b1');
+	b2 = document.getElementById('b2');
+	s1 = document.getElementById('s1');
 	rc = document.getElementById('rc');
 	rp = document.getElementById('rp');
 	gc = document.getElementById('gc');
@@ -80,7 +83,6 @@ function play(){
 		nextNoteTime = audioContext.currentTime;
 		timerWorker.postMessage('start');
 		audio.play();
-// 		$(document).trigger('sjs:play', []);
 		rc.play();
 		rp.play();
 		gc.play();
@@ -96,10 +98,6 @@ function play(){
 		timerWorker.postMessage('stop');
 		audio.pause();
 		audio.currentTime = 0;
-/*
-		$(document).trigger('sjs:play', []);
-		$(document).trigger('sjs:setCurrentTime', [], 0);
-*/
 		rc.pause();
 		rp.pause();
 		gc.pause();
@@ -120,10 +118,12 @@ function play(){
 		yp.currentTime = 0;
 		wc.currentTime = 0;
 		wp.currentTime = 0;
-		$('#screen').children('video').hide();
+		$('#screen').children('video').css('z-index', '-1');
+/*
 		$('#record').addClass('btn-danger');
 		$('#record').removeClass('btn-default');
 		$('#record').text('Record');
+*/
 		return 'play';
 	}
 }
