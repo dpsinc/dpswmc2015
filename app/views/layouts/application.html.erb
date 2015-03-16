@@ -24,18 +24,22 @@
 	</head>
 	<body>
 		<div class="container-fluid">
-			<a href="<%= root_path %>"><h1>Light Up The Night!</h1></a>
+			<div class="row row-valign">
+				<div class="col-sm-3">
+					<a href="http://www.dpsinc.com" target="_blank"><img src="<%= asset_path('dpsinc.png') %>" class="img-responsive"></a>
+				</div>
+				<div class="col-sm-4 col-sm-offset-1">
+					<a href="<%= root_path %>"><h1>Light Up The Night!</h1></a>
+				</div>
+				<div class="col-sm-3 col-sm-offset-1">
+					<a href="http://www.wintermusicconference.com/" target="_blank"><img src="<%= asset_path('wmc2015.png') %>" class="img-responsive"></a>
+				</div>
+			</div>
 		</div>
 		<%= yield %>
 		<div class="container" style="background-color: transparent;">
 			<div class="row">
 				<div class="col-sm-4 col-sm-offset-4 col-xs-6 col-xs-offset-3">
-					<p><a href="http://www.dpsinc.com" target="_blank"><img src="<%= asset_path('dpsinc.png') %>" class="img-responsive"></a></p>
-					<p>is proud to be a Platinum Level Sponsor of</p>
-					<p><a href="http://www.wintermusicconference.com/" target="_blank"><img src="<%= asset_path('wmc2015.png') %>" class="img-responsive"></a></p>
-					<p>Meet the DPS Crew in the</p>
-					<p>RICHELIEU ROOM</p>
-					<hr>
 					<p>Featuring the track "Skullclub" by</p>
 					<p><a href="http://theglitchmob.com" target="_blank"><img src="<%= asset_path('theglitchmob.png') %>" class="img-responsive"></a></p>
 					<p>Visit <a href="http://theglitchmob.com/ldiremixes/" target="_blank">theglitchmob.com</a> for tour dates, downloads and more.</p>

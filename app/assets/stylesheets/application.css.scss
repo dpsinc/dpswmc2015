@@ -97,6 +97,11 @@ ul, ol{
 		padding: 0;
 	}
 
+.row-valign{
+	display: flex;
+	align-items: center;
+}
+
 #screen{
 	background-image: image-url('player.jpg');
 	background-position: center center;

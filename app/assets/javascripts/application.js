@@ -21,11 +21,11 @@ if($('#screen').length){
 
 $(document).ready(function(){
 
-	if($('#keyboard').length){
-		keyboard = $('#keyboard').width();
+	$('#keyboard').each(function(){
+		keyboard = $(this).width();
 		keys = keyboard / 10;
-		$('.keys .key').width(keys);
-	}
+		$(this).find('.keys .key').width(keys);
+	});
 
 	if($('#screen').length){
 	

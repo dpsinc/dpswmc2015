@@ -68,10 +68,25 @@
 			</div>
 		</div>
 	<% else %>
+		<button id="play" class="btn-link" style="color: #fff; font-size: 8em; left: 50%; position: absolute; top: 50%; z-index: 5;"><i class="fa fa-fw fa-play-circle-o"></i></button>
+		<script>
+			$(document).ready(function(){
+				$('#play').css('margin-left', '-'+$('#play').width() / 2 + 'px');
+				$('#play').css('margin-top', '-'+$('#play').height() / 2 + 'px');
+				$('#play').click(function(){
+					$('#play').fadeOut();
+					$('#stop').removeClass('disabled');
+				});
+				$('#stop').click(function(){
+					$('#play').fadeIn();
+					$('#stop').addClass('disabled');
+				});
+			});
+		</script>
 		<div id="control">
 			<div class="row">
 				<div class="col-sm-2 col-xs-4">
-					<button id="play" class="btn btn-block btn-success disabled">Play</button>
+					<button id="stop" class="btn btn-block btn-default disabled">Stop</button>
 				</div>
 				<div class="col-sm-4 col-sm-offset-2 hidden-xs text-center">
 					<small class="text-uppercase">Created <%= @entry.created_at.strftime('%d/%m/%Y') %> by <%= @entry.user.name %></small>
