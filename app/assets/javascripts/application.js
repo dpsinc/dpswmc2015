@@ -139,75 +139,75 @@ function trigger(key){
 	console.log(key);
 	switch(key){
 		//red
-		case 114://pan
+		case 113://pan
 			$('#rp').css('z-index', '1');
 			$('#screen').children('video').not('#rp').css('z-index', '-1');
 			break;
-		case 82://circle
+		case 97://circle
 			$('#rc').css('z-index', '1');
 			$('#screen').children('video').not('#rc').css('z-index', '-1');
 			break;
 		//green
-		case 103://pan
+		case 119://pan
 			$('#gp').css('z-index', '1');
 			$('#screen').children('video').not('#gp').css('z-index', '-1');
 			break;
-		case 71://circle
+		case 115://circle
 			$('#gc').css('z-index', '1');
 			$('#screen').children('video').not('#gc').css('z-index', '-1');
 			break;
 		//blue
-		case 98://pan
+		case 101://pan
 			$('#bp').css('z-index', '1');
 			$('#screen').children('video').not('#bp').css('z-index', '-1');
 			break;
-		case 66://circle
+		case 100://circle
 			$('#bc').css('z-index', '1');
 			$('#screen').children('video').not('#bc').css('z-index', '-1');
 			break;
 		//yellow
-		case 121://pan
+		case 114://pan
 			$('#yp').css('z-index', '1');
 			$('#screen').children('video').not('#yp').css('z-index', '-1');
 			break;
-		case 89://circle
+		case 102://circle
 			$('#yc').css('z-index', '1');
 			$('#screen').children('video').not('#yc').css('z-index', '-1');
 			break;
 		//white
-		case 119://pan
+		case 116://pan
 			$('#wp').css('z-index', '1');
 			$('#screen').children('video').not('#wp').css('z-index', '-1');
 			break;
-		case 87://circle
+		case 103://circle
 			$('#wc').css('z-index', '1');
 			$('#screen').children('video').not('#wc').css('z-index', '-1');
 			break;
-		case 97://blind1on
+		case 121://off
+			$('#blank').css('z-index', 2);
+			break;
+		case 89://on
+			$('#blank').css('z-index', 0);
+			break;
+		case 117://blind1on
 			$('#b1').stop().fadeTo(10, 1);
 			break;
-		case 65://blind1off
+		case 85://blind1off
 			$('#b1').stop().fadeTo(500, 0);
 			break;
-		case 100://blind2on
+		case 105://blind2on
 			$('#b2').stop().fadeTo(10, 1);
 			break;
-		case 68://blind2off
+		case 73://blind2off
 			$('#b2').stop().fadeTo(500, 0);
 			break;
-		case 115://strobeOn
+		case 111://strobeOn
 			$('#s1').stop().fadeTo(10, 1);
 // 			strobeOn();
 			break;
-		case 83://strobeOff
+		case 79://strobeOff
 			$('#s1').stop().fadeTo(10, 0);
 // 			strobeOff();
-			break;
-		case 111://off
-			$('#blank').css('z-index', 2);
-			break;
-		case 79://on
-			$('#blank').css('z-index', 0);
 			break;
 		case 112://pause
 			rc.pause();
