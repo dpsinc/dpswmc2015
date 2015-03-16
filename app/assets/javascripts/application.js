@@ -1,6 +1,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap-sprockets
+//= require browser
 //= require AudioContextMonkeyPatch
 //= require metronome
 //= require mediagroup
@@ -28,6 +29,14 @@ $(document).ready(function(){
 	});
 
 	if($('#screen').length){
+
+		//browser
+		console.log($.browser.name);
+		if($.browser.name == 'safari'){
+			alert('Sorry, this game is not compatible with Safari. Please use Chrome or Firefox to play.');
+			window.location.replace('/');
+		}
+		//browser
 	
 		$('#screen').height(($('#screen').width() / 16) * 9);
 
