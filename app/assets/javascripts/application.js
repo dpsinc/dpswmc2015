@@ -32,8 +32,12 @@ $(document).ready(function(){
 
 		//browser
 		console.log($.browser.name);
+		if($.browser.name == 'safari' || $.browser.name == 'unknown'){
+			alert('Sorry, this game is not compatible with your browser. Please use Chrome or Firefox to play.');
+			window.location.replace('/');
+		}
 		if($.browser.name == 'safari'){
-			alert('Sorry, this game is not compatible with Safari. Please use Chrome or Firefox to play.');
+			alert('Sorry, this game is not compatible with your browser. Please use Chrome or Firefox to play.');
 			window.location.replace('/');
 		}
 		//browser
