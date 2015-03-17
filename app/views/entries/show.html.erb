@@ -12,7 +12,7 @@
 				<div class="modal-body">
 					<h2>Thanks For Playing!</h2>
 					<p>Don't forget to share your design!</p>
-					<ul class="list-inline">
+					<ul class="list-inline" style="margin-bottom: 15px;">
 						<li>
 							<a data-url="https://www.facebook.com/sharer/sharer.php?u=<%=u request.original_url %>&output=embed" class="share facebook">
 								<span class="fa-stack fa-lg">
@@ -56,16 +56,15 @@
 			$('#modal').modal('show');
 		});
 	</script>
-<% else %>
+<%
+		end
+	end
+%>
 	<div class="container">
 		<h2>Think You Can Do Better?</h2>
 		<p>Enter for your chance to win a Grand Prize DJ Set valued at $4,500!</p>
 		<%= link_to 'PLAY!', new_user_path, :class => 'btn btn-lg btn-primary' %>
 	</div>
-<%
-		end
-	end
-%>
 
 <script>
 

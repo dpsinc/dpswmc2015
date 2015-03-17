@@ -31,12 +31,8 @@ $(document).ready(function(){
 	if($('#screen').length){
 
 		//browser
-		console.log($.browser.name);
+		//console.log($.browser.name);
 		if($.browser.name == 'safari' || $.browser.name == 'unknown'){
-			alert('Sorry, this game is not compatible with your browser. Please use Chrome or Firefox to play.');
-			window.location.replace('/');
-		}
-		if($.browser.name == 'safari'){
 			alert('Sorry, this game is not compatible with your browser. Please use Chrome or Firefox to play.');
 			window.location.replace('/');
 		}
@@ -79,7 +75,7 @@ $(document).ready(function(){
 			$('#submit').addClass('disabled');
 			play();
 		});
-		$('#submit').click(function(){
+		$('#submit, #submitModal').click(function(){
 			$.ajax({
 				type: 'post',
 				url: '/entries',
@@ -103,6 +99,20 @@ $(document).ready(function(){
 		timerWorker.postMessage({
 			'interval': lookahead
 		});
+		
+		//modals
+		function centerModals(){
+			$('.modal').each(function(i){
+				var $clone = $(this).clone().css('display', 'block').appendTo('body');
+				var top = Math.round(($clone.height() - $clone.find('.modal-content').height()) / 2);
+				top = top > 0 ? top : 0;
+				$clone.remove();
+				$(this).find('.modal-content').css("margin-top", top);
+			});
+		}
+		$('.modal').on('show.bs.modal', centerModals);
+		$(window).on('resize', centerModals);
+		//modals
 	
 	}
 

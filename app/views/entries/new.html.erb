@@ -71,5 +71,20 @@
 <script>
 	$(document).ready(function(){
 		$('#modal').modal('show');
+		$('#audio').on('ended', function(){
+			$('#ended').modal('show');
+		});
 	});
 </script>
+<div id="ended" class="modal hidden-xs">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-body">
+				<h2>Thanks for playing!</h2>
+				<p class="lead">Submit your design for a chance to win!</p>
+				<button id="submitModal" class="btn btn-lg btn-success">Submit</button><br>
+				<button type="button" class="btn btn-link" data-dismiss="modal">Try Again</button>
+			</div>
+		</div>
+	</div>
+</div>
