@@ -1,0 +1,59 @@
+/*
+ *= require_self
+ */
+
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
+
+body{
+	background: #000;
+	color: #fff;
+}
+#stage{
+	background-image: image-url('player.jpg');
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 1080px;
+	margin: 0 auto;
+	position: relative;
+	width: 1920px;
+}
+	#stage img, #stage video{
+		height: auto;
+		left: 0;
+		position: absolute;
+		top: 0;
+		width: 100%;
+		z-index: -1;
+	}
+.btn{
+	border-radius: 2px;
+	font-weight: 900;
+	text-transform: uppercase;
+}
+.progress{
+	background-color: transparent;
+	border-radius: 2px;
+	height: 10px;
+	margin: 12px 0;
+}
+	.progress-bar{
+		background-color: #333;
+	}
+#brand{
+	left: 0;
+	position: absolute;
+	top: 15px;
+	width: 100%;
+	z-index: 10;
+}
+#control{
+	bottom: 15px;
+	left: 0;
+	position: absolute;
+	width: 100%;
+	z-index: 10;
+}

@@ -1,0 +1,84 @@
+<div id="brand" class="container-fluid">
+	<div class="row">
+		<div class="col-xs-2">
+			<img src="<%= image_path('frontpage/hero_dps_logo@2x.png') %>" style="height: 90px; width: auto;">
+		</div>
+		<div class="col-xs-8 text-center">
+			<img src="<%= image_path('frontpage/hero_lutn_logo@2x.png') %>" style="height: 270px; width: 360px;">
+		</div>
+		<div class="col-xs-2">
+			<img src="<%= image_path('frontpage/hero_wmc_logo@2x.png') %>" style="float: right; height: 90px; width: auto;">
+		</div>
+	</div>
+</div>
+
+<div id="stage">
+	<img id="blank" src="<%= image_path('player.jpg') %>" style="z-index: 0;">
+	<img id="b1" src="<%= image_path('b1.png') %>" style="display: none; z-index: 3;">
+	<img id="b2" src="<%= image_path('b2.png') %>" style="display: none; z-index: 3;">
+	<img id="s1" src="<%= image_path('s1.png') %>" style="display: none; z-index: 3;">
+	<video id="rp" mediagroup="stage" loop muted>
+		<source src="<%= video_path('rp-booth.mp4') %>" type="video/mp4">
+	</video>
+	<video id="rc" mediagroup="stage" loop muted>
+		<source src="<%= video_path('rc-booth.mp4') %>" type="video/mp4">
+	</video>
+	<video id="gp" mediagroup="stage" loop muted>
+		<source src="<%= video_path('gp-booth.mp4') %>" type="video/mp4">
+	</video>
+	<video id="gc" mediagroup="stage" loop muted>
+		<source src="<%= video_path('gc-booth.mp4') %>" type="video/mp4">
+	</video>
+	<video id="bp" mediagroup="stage" loop muted>
+		<source src="<%= video_path('bp-booth.mp4') %>" type="video/mp4">
+	</video>
+	<video id="bc" mediagroup="stage" loop muted>
+		<source src="<%= video_path('bc-booth.mp4') %>" type="video/mp4">
+	</video>
+	<video id="yp" mediagroup="stage" loop muted>
+		<source src="<%= video_path('yp-booth.mp4') %>" type="video/mp4">
+	</video>
+	<video id="yc" mediagroup="stage" loop muted>
+		<source src="<%= video_path('yc-booth.mp4') %>" type="video/mp4">
+	</video>
+	<video id="wp" mediagroup="stage" loop muted>
+		<source src="<%= video_path('wp-booth.mp4') %>" type="video/mp4">
+	</video>
+	<video id="wc" mediagroup="stage" loop muted>
+		<source src="<%= video_path('wc-booth.mp4') %>" type="video/mp4">
+	</video>
+	<audio id="audio">
+		<source src="<%= audio_path('audio.mp3') %>" type="audio/mpeg">
+	</audio>	
+</div>
+
+<div id="control" class="container-fluid">
+	<div class="row">
+		<div class="col-xs-2">
+			<div class="btn-group btn-group-justified" role="group">
+				<div class="btn-group" role="group">
+					<button id="record" class="btn btn-danger">Record</button>
+				</div>
+				<div class="btn-group" role="group">
+					<button id="stop" class="btn btn-default disabled">Stop</button>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-8">
+			<div class="progress">
+				<div class="progress-bar" role="progressbar" style="width: 0%;">
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-2">
+			<div class="btn-group btn-group-justified" role="group">
+				<div class="btn-group" role="group">
+					<button id="play" class="btn btn-default disabled">Play</button>
+				</div>
+				<div class="btn-group" role="group">
+					<button id="submit" class="btn btn-block btn-success disabled">Submit</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

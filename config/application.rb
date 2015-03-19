@@ -7,6 +7,6 @@ Bundler.require(:default, Rails.env)
 module Dpswmc2015
 	class Application < Rails::Application
 		config.assets.paths << Rails.root.join('audio', 'video')
-		config.assets.precompile += %w( frontpage.js frontpage.css )
+		config.assets.precompile += %w( frontpage.js frontpage.css booth.js booth.css )
 	end
 end
