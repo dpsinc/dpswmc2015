@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+	</head>
+	<body>
+		<h1>Congratulations, <%= @entry.user.name %>!</h1>
+		<p>Your fantasy light show is now ready for you to showcase to the world!</p>
+		<p>Use the provided link below to playback your final light show movie and of course to share and promote your design to your friends. The only way to win, is to earn views and shares!</p>
+		<p>The more views and shares you get, the greater the chance you have for winning a killer Pioneer DJ Rig valued at $4,500! (Must be present to win)</p>
+		<p>http://www.dpswmc2015.com/entries/<%= @entry.id %></p>
+		<h2>Share</h2>
+		<p>
+			<a href="https://www.facebook.com/sharer/sharer.php?u=<%=u 'http://www.dpswmc.com/entries/' + @entry.id.to_s %>" target="_blank">Facebook</a> | 
+			<a href="https://twitter.com/home?status=<%=u 'http://www.dpswmc.com/entries/' + @entry.id.to_s %>" target="_blank">Twitter</a> | 
+			<a href="https://plus.google.com/share?url=<%=u 'http://www.dpswmc.com/entries/' + @entry.id.to_s %>" target="_blank">Google+</a> | 
+			<a href="https://www.linkedin.com/shareArticle?mini=true&url=<%=u 'http://www.dpswmc.com/entries/' + @entry.id.to_s %>&title=<%=u 'Play The Light It Up Fantasy DJ Game!' %>&summary=<%=u 'Enter for your chance to win a Grand Prize DJ Set valued at $4,500!' %>&source=dpswmc2015.com" target="_blank">LinkedIn</a>
+		</p>
+		<h3>Enjoy the show!</h3>
+		<p>
+			<a href="http://www.dpswmc2015.com/rules" target="_blank">Game Rules</a> | 
+			<a href="http://www.dpswmc2015.com" target="_blank">dpswmc2015.com</a> | 
+			<a href="http://www.dpsinc.com" target="_blank">dpsinc.com</a>
+		</p>
+	</body>
+</html>
