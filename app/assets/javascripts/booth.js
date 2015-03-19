@@ -60,7 +60,7 @@ $(document).ready(function(){
 			data: JSON.stringify({ 'notes': notes}),
 			success: function(data){
 				console.log(data);
-				window.location = '/entries/' + data.id;
+				//window.location = '/entries/' + data.id;
 			}
 		});
 	});
