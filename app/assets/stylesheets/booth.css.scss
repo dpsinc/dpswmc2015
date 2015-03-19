@@ -11,7 +11,7 @@ body{
 	background: #000;
 	color: #fff;
 }
-#stage{
+#screen{
 	background-image: image-url('player.jpg');
 	background-position: center center;
 	background-repeat: no-repeat;
@@ -21,7 +21,7 @@ body{
 	position: relative;
 	width: 1920px;
 }
-	#stage img, #stage video{
+	#screen img, #screen video{
 		height: auto;
 		left: 0;
 		position: absolute;
