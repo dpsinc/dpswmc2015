@@ -45,7 +45,7 @@ function nextNote(){
 			trigger(n.key);
 		}
 	});
-	console.log(current16thNote);
+//	console.log(current16thNote);
 }
 
 function scheduleNote(beatNumber, time){

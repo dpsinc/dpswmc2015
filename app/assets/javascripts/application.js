@@ -51,13 +51,14 @@ $(document).ready(function(){
 		audio.addEventListener('ended', function(){
 			play();
 			$('#submit').removeClass('disabled');
-			console.log(JSON.stringify(notes));
+//			console.log(JSON.stringify(notes));
 		}, false);
 	
 		$('#record').click(function(){
 			$('#record').addClass('disabled');
 			$('#stop').removeClass('disabled');
 			$('#submit').addClass('disabled');
+			notes = [];
 			play();
 		});
 		$('#stop').click(function(){
@@ -83,7 +84,7 @@ $(document).ready(function(){
 				contentType: 'application/json',
 				data: JSON.stringify({ 'notes': notes}),
 				success: function(data){
-					console.log(data);
+//					console.log(data);
 					window.location = '/entries/' + data.id;
 				}
 			});
@@ -125,7 +126,7 @@ $(document).ready(function(){
 					key: e.which
 				});
 				trigger(e.which);
-				console.log('note: ' + note + ', key: ' + e.which);
+//				console.log('note: ' + note + ', key: ' + e.which);
 			}
 		});
 		$(document).keyup(function(e){
@@ -137,7 +138,7 @@ $(document).ready(function(){
 						key: e.which
 					});
 					trigger(e.which);
-					console.log('note: ' + note + ', key: ' + e.which);
+//					console.log('note: ' + note + ', key: ' + e.which);
 				}
 			}
 		});
@@ -155,7 +156,7 @@ $(document).ready(function(){
 });
 
 function trigger(key){
-	console.log(key);
+//	console.log(key);
 	switch(key){
 		//red
 		case 113://pan
