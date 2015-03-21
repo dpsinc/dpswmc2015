@@ -52,19 +52,6 @@ $(document).ready(function(){
 		$('#submit').addClass('disabled');
 		play();
 	});
-	$('#submit, #submitModal').click(function(){
-		$.ajax({
-			type: 'post',
-			url: '/entries',
-			dataType: 'json',
-			contentType: 'application/json',
-			data: JSON.stringify({ 'notes': notes}),
-			success: function(data){
-				console.log(data);
-				//window.location = '/entries/' + data.id;
-			}
-		});
-	});
 
 	audioContext = new AudioContext();
 	timerWorker = new Worker('/metronomeworker.js');
@@ -93,6 +80,22 @@ $(document).ready(function(){
 	$('#user').modal('show');
 	$('#user form').on('ajax:success', function(e, data, status, xhr){
 		console.log(xhr.responseText);
+	});
+
+	$('#audio').on('ended', function(){
+		$('#done').modal('show');
+	});
+	$('#submit, #submitModal').click(function(){
+		$.ajax({
+			type: 'post',
+			url: '/entries',
+			dataType: 'json',
+			contentType: 'application/json',
+			data: JSON.stringify({ 'notes': notes}),
+			success: function(data){
+				console.log(data);
+			}
+		});
 	});
 
 });

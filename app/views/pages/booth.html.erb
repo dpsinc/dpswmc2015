@@ -99,10 +99,10 @@
 						</div>
 					<% end %>
 					<div class="form-group">
-						<%= f.text_field :name, :placeholder => 'Name', :class => 'form-control input-lg text-center' %>
+						<%= f.text_field :name, :placeholder => 'Name', :autocomplete => :off, :class => 'form-control input-lg text-center' %>
 					</div>
 					<div class="form-group">
-						<%= f.text_field :email, :placeholder => 'Email', :class => 'form-control input-lg text-center' %>
+						<%= f.text_field :email, :placeholder => 'Email', :autocomplete => :off, :class => 'form-control input-lg text-center' %>
 					</div>
 					<%= f.submit 'Play!', :class => 'btn btn-lg btn-primary' %>
 				<% end %>
@@ -147,6 +147,19 @@
 				<h3>Step 3</h3>
 				<p>Submit your lighting design and share it on social!</p>
 				<button type="button" class="btn btn-primary" data-dismiss="modal">Play The Game!</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="done" class="modal hidden-xs">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-body">
+				<h2>Thanks for playing!</h2>
+				<p class="lead">Submit your design for a chance to win!</p>
+				<button id="submitModal" class="btn btn-lg btn-success">Submit</button><br>
+				<button type="button" class="btn btn-link" data-dismiss="modal">Try Again</button>
 			</div>
 		</div>
 	</div>
