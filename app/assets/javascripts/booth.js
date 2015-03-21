@@ -5,6 +5,12 @@
 //= require_self
 $(document).ready(function(){
 
+	$('#keyboard').each(function(){
+		keyboard = $(this).width();
+		keys = keyboard / 10;
+		$(this).find('.keys .key').width(keys);
+	});
+
 	var rc = $('#rc')[0];
 	var rp = $('#rp')[0];
 	var gc = $('#gc')[0];
@@ -93,9 +99,13 @@ $(document).ready(function(){
 			contentType: 'application/json',
 			data: JSON.stringify({ 'notes': notes}),
 			success: function(data){
-				console.log(data);
+				$('#done').modal('hide');
+				$('#kill').modal('show');
 			}
 		});
+	});
+	$('#kill').on('hidden.bs.modal', function(){
+		$('#user').modal('show');
 	});
 
 });
