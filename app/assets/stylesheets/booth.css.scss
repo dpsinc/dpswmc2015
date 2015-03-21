@@ -29,6 +29,9 @@ body{
 		width: 100%;
 		z-index: -1;
 	}
+.form-control{
+	border-radius: 2px;
+}
 .btn{
 	border-radius: 2px;
 	font-weight: 900;
@@ -43,6 +46,16 @@ body{
 	.progress-bar{
 		background-color: #fff;
 	}
+
+.modal-backdrop.in{
+	opacity: 0.5;
+}
+.modal-content{
+	background: rgba(0,0,0,0.5);
+	border: solid 1px rgba(255,255,255,0.5);
+	padding: 30px 15px;
+	text-align: center;
+}
 #brand{
 	left: 0;
 	position: absolute;

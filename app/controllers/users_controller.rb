@@ -32,7 +32,11 @@ class UsersController < ApplicationController
     if @user.save
       #redirect_to @user, notice: 'User was successfully created.'
 	  session[:user_id] = @user.id
-      redirect_to new_entry_path, notice: 'User was successfully created.'
+	  respond_to do |format|
+		  format.html { redirect_to new_entry_path }
+		  format.js {  }
+		  format.json { render json: @user }
+	  end
     else
       render :new
     end

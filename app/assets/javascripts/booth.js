@@ -90,6 +90,11 @@ $(document).ready(function(){
 	$(window).on('resize', centerModals);
 	//modals
 
+	$('#user').modal('show');
+	$('#user form').on('ajax:success', function(e, data, status, xhr){
+		console.log(xhr.responseText);
+	});
+
 });
 
 $(document).keypress(function(e){

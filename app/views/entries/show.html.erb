@@ -69,32 +69,13 @@
 <script>
 
 	$(document).ready(function(){
-/*
-		soundManager.onready(function(){
-			var loader = new PxLoader();
-			loader.add(new PxLoaderImage('<%= image_path('blind.png') %>'));
-			loader.add(new PxLoaderImage('<%= image_path('strobe.png') %>'));
-			loader.addSound('audio', '<%= audio_path('audio.mp3') %>');
-			loader.add(new PxLoaderVideo('<%= video_path('white.mp4') %>'));
-			loader.add(new PxLoaderVideo('<%= video_path('red.mp4') %>'));
-			loader.add(new PxLoaderVideo('<%= video_path('green.mp4') %>'));
-			loader.add(new PxLoaderVideo('<%= video_path('blue.mp4') %>'));
-			loader.add(new PxLoaderVideo('<%= video_path('yellow.mp4') %>'));
-			loader.start();
-			loader.addCompletionListener(function(e){
-*/
-				notes = [];
-				<% @entry.notes.each do |note| %>
-					notes.push({
-						note: <%= note.note %>,
-						key: <%= note.key %>
-					});
-				<% end %>
-/*
-				$('#play').removeClass('disabled');
-			}); 
-		});
-*/
+		notes = [];
+		<% @entry.notes.each do |note| %>
+			notes.push({
+				note: <%= note.note %>,
+				key: <%= note.key %>
+			});
+		<% end %>
 	});
 
 </script>
