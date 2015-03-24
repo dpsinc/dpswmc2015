@@ -13,11 +13,11 @@
 </div>
 
 <div id="screen">
-	<img id="blank" src="<%= image_path('player-booth.png') %>" style="z-index: 0;">
-	<img id="b1" src="<%= image_path('b1-booth.png') %>" style="display: none; z-index: 3;">
-	<img id="b2" src="<%= image_path('b2-booth.png') %>" style="display: none; z-index: 3;">
-	<img id="s1" src="<%= image_path('s1-booth.png') %>" style="display: none; z-index: 3;">
-	<video id="rp" mediagroup="stage" loop muted>
+	<img id="b1" src="<%= image_path('b1-booth.png') %>" style="z-index: 5;">
+	<img id="b2" src="<%= image_path('b2-booth.png') %>" style="z-index: 4;">
+	<img id="s1" src="<%= image_path('s1-booth.png') %>" style="z-index: 3;">
+	<img id="blank" src="<%= image_path('player-booth.png') %>" style="z-index: 2;">
+	<!--<video id="rp" mediagroup="stage" loop muted>
 		<source src="<%= video_path('rp-booth.mp4') %>" type="video/mp4">
 	</video>
 	<video id="rc" mediagroup="stage" loop muted>
@@ -34,7 +34,7 @@
 	</video>
 	<video id="bc" mediagroup="stage" loop muted>
 		<source src="<%= video_path('bc-booth.mp4') %>" type="video/mp4">
-	</video>
+	</video>-->
 	<video id="yp" mediagroup="stage" loop muted>
 		<source src="<%= video_path('yp-booth.mp4') %>" type="video/mp4">
 	</video>

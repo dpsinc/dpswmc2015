@@ -1,7 +1,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap-sprockets
-//= require metronome
+//= require metronome-booth
 //= require_self
 $(document).ready(function(){
 
@@ -11,12 +11,14 @@ $(document).ready(function(){
 		$(this).find('.keys .key').width(keys);
 	});
 
+/*
 	var rc = $('#rc')[0];
 	var rp = $('#rp')[0];
 	var gc = $('#gc')[0];
 	var gp = $('#gp')[0];
 	var bc = $('#bc')[0];
 	var bp = $('#bp')[0];
+*/
 	var yc = $('#yc')[0];
 	var yp = $('#yp')[0];
 	var wc = $('#wc')[0];
@@ -136,6 +138,110 @@ $(document).keyup(function(e){
 });
 
 function trigger(key){
+//	console.log(key);
+	switch(key){
+		//red
+		case 113://pan
+			$('#yp').removeClass();
+			$('#yp').addClass('red');
+			$('#yp').show();
+			$('#screen').children('video').not('#yp').hide();
+			break;
+		case 97://circle
+			$('#yc').removeClass();
+			$('#yc').addClass('red');
+			$('#yc').show();
+			$('#screen').children('video').not('#yc').hide();
+			break;
+		//green
+		case 119://pan
+			$('#yp').removeClass();
+			$('#yp').addClass('green');
+			$('#yp').show();
+			$('#screen').children('video').not('#yp').hide();
+			break;
+		case 115://circle
+			$('#yc').removeClass();
+			$('#yc').addClass('green');
+			$('#yc').show();
+			$('#screen').children('video').not('#yc').hide();
+			break;
+		//blue
+		case 101://pan
+			$('#yp').removeClass();
+			$('#yp').addClass('blue');
+			$('#yp').show();
+			$('#screen').children('video').not('#yp').hide();
+			break;
+		case 100://circle
+			$('#yc').removeClass();
+			$('#yc').addClass('blue');
+			$('#yc').show();
+			$('#screen').children('video').not('#yc').hide();
+			break;
+		//yellow
+		case 114://pan
+			$('#yp').removeClass();
+			$('#yp').show();
+			$('#screen').children('video').not('#yp').hide();
+			break;
+		case 102://circle
+			$('#yc').removeClass();
+			$('#yc').show();
+			$('#screen').children('video').not('#yc').hide();
+			break;
+		//white
+		case 116://pan
+			$('#wp').show();
+			$('#screen').children('video').not('#wp').hide();
+			break;
+		case 103://circle
+			$('#wc').show();
+			$('#screen').children('video').not('#wc').hide();
+			break;
+		case 121://off
+			$('#blank').show();
+			break;
+		case 89://on
+			$('#blank').hide();
+			break;
+		case 117://blind1on
+			$('#b1').stop().fadeTo(10, 1);
+			break;
+		case 85://blind1off
+			$('#b1').stop().fadeTo(500, 0);
+			break;
+		case 105://blind2on
+			$('#b2').stop().fadeTo(10, 1);
+			break;
+		case 73://blind2off
+			$('#b2').stop().fadeTo(500, 0);
+			break;
+		case 111://strobeOn
+			$('#s1').stop().fadeTo(10, 1);
+// 			strobeOn();
+			break;
+		case 79://strobeOff
+			$('#s1').stop().fadeTo(10, 0);
+// 			strobeOff();
+			break;
+		case 112://pause
+			yc.pause();
+			yp.pause();
+			wc.pause();
+			wp.pause();
+			break;
+		case 80://play
+			yc.play();
+			yp.play();
+			wc.play();
+			wp.play();
+			break;
+		default:
+	}
+}
+
+function triggerBACKUP(key){
 //	console.log(key);
 	switch(key){
 		//red

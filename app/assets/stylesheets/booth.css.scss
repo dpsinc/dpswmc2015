@@ -22,12 +22,12 @@ body{
 	width: 1920px;
 }
 	#screen img, #screen video{
+		display: none;
 		height: auto;
 		left: 0;
 		position: absolute;
 		top: 0;
 		width: 100%;
-		z-index: -1;
 	}
 .form-control{
 	border-radius: 2px;
@@ -46,6 +46,22 @@ body{
 	.progress-bar{
 		background-color: #fff;
 	}
+
+.red{
+	filter: hue-rotate(290deg);
+	-moz-filter: hue-rotate(290deg);
+	-webkit-filter: hue-rotate(290deg);
+}
+.green{
+	filter: hue-rotate(76deg);
+	-moz-filter: hue-rotate(76deg);
+	-webkit-filter: hue-rotate(76deg);
+}
+.blue{
+	filter: hue-rotate(160deg);
+	-moz-filter: hue-rotate(160deg);
+	-webkit-filter: hue-rotate(160deg);
+}
 
 .modal-backdrop.in{
 	opacity: 0.5;
