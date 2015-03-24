@@ -86,6 +86,7 @@ $(document).ready(function(){
 	//modals
 
 	$('#user').modal('show');
+	$('#user_name').focus();
 	$('#user form').on('ajax:success', function(e, data, status, xhr){
 		console.log(xhr.responseText);
 	});
@@ -108,6 +109,7 @@ $(document).ready(function(){
 	});
 	$('#kill').on('hidden.bs.modal', function(){
 		$('#user').modal('show');
+		$('#user_name').focus();
 	});
 
 });
